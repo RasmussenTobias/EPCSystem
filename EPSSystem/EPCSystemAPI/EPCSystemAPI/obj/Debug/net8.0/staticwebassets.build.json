@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "e0uljn6ja5GFnYYfyDcb76IuYZusaOQg0LacbituVOE=",
+  "Source": "EPCSystemAPI",
+  "BasePath": "_content/EPCSystemAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
