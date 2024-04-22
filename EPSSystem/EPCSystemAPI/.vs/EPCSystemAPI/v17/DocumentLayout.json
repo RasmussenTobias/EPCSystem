@@ -3,75 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\deviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\deviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\devicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.electricity_production.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\transformevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\transformevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\transferevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\transferevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\ledger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\ledger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\electricityproductiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\electricityproductiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\electricityproduction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\electricityproduction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\models\\produceevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\produceevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\epcsystemapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\epcsystemapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,230 +33,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "dbo.electricity_production [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.electricity_production.sql",
               "ToolTip": "dbo.electricity_production [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-22T19:16:09.908Z",
+              "WhenOpened": "2024-04-22T19:50:16.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DeviceResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\DeviceResponseDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\DeviceResponseDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\DeviceResponseDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\DeviceResponseDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAWAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Program.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T17:29:00.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DevicesController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAmwCYAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:36:54.053Z",
+              "WhenOpened": "2024-04-22T19:45:53.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Device.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Device.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\Device.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Device.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\Device.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:22:32.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeviceDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\DeviceDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\DeviceDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\DeviceDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\DeviceDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:38:43.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAmwCMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T12:53:34.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Certificate.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Certificate.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\Certificate.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Certificate.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\Certificate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:05:32.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ElectricityProductionController.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "RelativeToolTip": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:04:28.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DbContext.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\DbContext.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
-              "RelativeToolTip": "EPCSystemAPI\\DbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T13:55:26.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ElectricityProduction.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProduction.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ElectricityProduction.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProduction.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\ElectricityProduction.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:02:50.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TransferEvent.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferEvent.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TransferEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T16:31:44.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TransformEvent.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransformEvent.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransformEvent.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransformEvent.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TransformEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T16:31:44.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ElectricityProductionDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:30:20.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Ledger.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Ledger.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\Ledger.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Ledger.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\Ledger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:23:05.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\UserDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\UserDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\UserDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\UserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:42:57.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\User.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\User.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:22:23.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ProduceEvent.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ProduceEvent.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ProduceEvent.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ProduceEvent.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\ProduceEvent.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:23:11.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EPCSystemAPI.http",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.http",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\EPCSystemAPI.http",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.http",
-              "RelativeToolTip": "EPCSystemAPI\\EPCSystemAPI.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-04-22T13:55:24.762Z"
+              "WhenOpened": "2024-04-22T19:45:40.608Z"
             }
           ]
         }

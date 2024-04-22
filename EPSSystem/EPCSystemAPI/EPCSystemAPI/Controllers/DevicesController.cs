@@ -51,12 +51,6 @@ namespace EPCSystemAPI.Controllers
             return devices;
         }
 
-
-
-
-
-
-
         [HttpPost]
         public async Task<ActionResult<Device>> PostDevice(DeviceDto deviceInput)
         {
