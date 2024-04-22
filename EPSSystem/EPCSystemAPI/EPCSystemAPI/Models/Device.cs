@@ -13,5 +13,6 @@ namespace EPCSystemAPI.models
 
         // Navigation property
         public User User { get; set; }
+        public ICollection<ElectricityProduction> ElectricityProductions { get; set; }
     }
 }
