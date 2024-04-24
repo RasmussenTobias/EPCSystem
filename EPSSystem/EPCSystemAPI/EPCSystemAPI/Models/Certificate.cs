@@ -9,6 +9,7 @@ namespace EPCSystemAPI.models
         public int UserId { get; set; }
         public int ElectricityProductionId { get; set; }
         public DateTime CreatedAt { get; set; }
+        public decimal volume { get; set; }
 
         // Navigation properties
         public User User { get; set; }

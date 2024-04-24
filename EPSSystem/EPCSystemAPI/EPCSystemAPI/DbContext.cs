@@ -1,4 +1,5 @@
 ﻿using EPCSystemAPI.models;
+using EPCSystemAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EPCSystemAPI
@@ -14,10 +15,15 @@ namespace EPCSystemAPI
         public DbSet<Device> Devices { get; set; }
         public DbSet<ElectricityProduction> ElectricityProductions { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
-        public DbSet<Ledger> Ledgers { get; set; }
+        //public DbSet<Ledger> Ledger { get; set; }
+        public DbSet<ProduceLedger> produceLedger { get; set; }
+        public DbSet<TransferLedger> transferLedger { get; set; }
+        public DbSet<TransformLedger> transformLedger { get; set; }
         public DbSet<TransferEvent> TransferEvents { get; set; }
         public DbSet<TransformEvent> TransformEvents { get; set; }
         public DbSet<ProduceEvent> ProduceEvents { get; set; }
+
+        public DbSet<UserBalanceView> UserBalanceView { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,19 +53,33 @@ namespace EPCSystemAPI
                 .HasOne(c => c.User)
                 .WithMany(u => u.Certificates)
                 .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade);            
 
-            modelBuilder.Entity<Ledger>()
-                .ToTable("ledger");
+            modelBuilder.Entity<ProduceLedger>()
+                .ToTable("ProduceLedger");
+
+            modelBuilder.Entity<TransferLedger>()
+               .ToTable("TransferLedger");
+
+            modelBuilder.Entity<TransformLedger>()
+               .ToTable("TransformLedger");
 
             modelBuilder.Entity<TransferEvent>()
-                .ToTable("transfer_events");
+                .ToTable("_TransferEvents");
 
             modelBuilder.Entity<TransformEvent>()
-                .ToTable("transform_events");
+                .ToTable("transformevents");
 
             modelBuilder.Entity<ProduceEvent>()
                 .ToTable("produce_events");
+
+            modelBuilder.Entity<Certificate>()
+                .HasOne(c => c.ElectricityProduction)
+                .WithOne()
+                .HasForeignKey<Certificate>(c => c.ElectricityProductionId);
+
+            modelBuilder.Entity<UserBalanceView>().ToView("UserBalanceView");
+            modelBuilder.Entity<UserBalanceView>().HasNoKey();
         }
     }
 }

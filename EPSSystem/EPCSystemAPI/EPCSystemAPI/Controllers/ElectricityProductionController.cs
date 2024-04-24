@@ -44,7 +44,9 @@ public class ElectricityProductionController : ControllerBase
         {
             UserId = device.UserId,
             ElectricityProductionId = electricityProduction.Id,
-            CreatedAt = DateTime.Now 
+            CreatedAt = DateTime.Now,
+            volume = model.AmountWh
+        
         };
         _context.Certificates.Add(certificate);
                 
@@ -58,16 +60,15 @@ public class ElectricityProductionController : ControllerBase
         
         await _context.SaveChangesAsync();
         
-        var ledgerEntry = new Ledger
+        var ledgerEntry = new ProduceLedger
         {
             Id = produceEvent.Id, // ProduceEvent ID is the Ledger ID
-            CertificateId = certificate.Id,
             EventType = "PRODUCE", 
             ElectricityProductionId = electricityProduction.Id,
             TransactionDate = DateTime.Now,
             Volume = model.AmountWh 
         };
-        _context.Ledgers.Add(ledgerEntry);
+        _context.produceLedger.Add(ledgerEntry);
 
         await _context.SaveChangesAsync();
 
