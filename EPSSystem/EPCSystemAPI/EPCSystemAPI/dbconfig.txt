@@ -1,0 +1,79 @@
+﻿CREATE TABLE [dbo].[_TransferEvents] (
+    [Id]                        INT          IDENTITY (1, 1) NOT NULL,
+    [BundleId]                  INT          NULL,
+    [FromUserId]                INT          NOT NULL,
+    [ToUserId]                  INT          NOT NULL,
+    [Volume]                    DECIMAL (18) NOT NULL,
+    [Electricity_production_id] INT          NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[_TransformEvents] (
+    [Id]                      INT             IDENTITY (1, 1) NOT NULL,
+    [LedgerId]                INT             NOT NULL,
+    [DeviceId]                INT             NOT NULL,
+    [ElectricityProductionId] INT             NOT NULL,
+    [AmountWh]                DECIMAL (10, 2) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[certificates] (
+    [id]                      INT          IDENTITY (1, 1) NOT NULL,
+    [userid]                  INT          NOT NULL,
+    [electricityproductionid] INT          NOT NULL,
+    [createdat]               DATETIME     NOT NULL,
+    [volume]                  DECIMAL (18) NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    FOREIGN KEY ([userid]) REFERENCES [dbo].[users] ([id]),
+    FOREIGN KEY ([electricityproductionid]) REFERENCES [dbo].[electricity_production] ([id]),
+    CONSTRAINT [FK_certificateselectricityproduction] FOREIGN KEY ([electricityproductionid]) REFERENCES [dbo].[electricity_production] ([id]),
+    CONSTRAINT [FK_certificatesusers] FOREIGN KEY ([userid]) REFERENCES [dbo].[users] ([id])
+);
+
+CREATE TABLE [dbo].[devices] (
+    [id]         INT           IDENTITY (1, 1) NOT NULL,
+    [userid]     INT           NOT NULL,
+    [devicename] VARCHAR (255) NULL,
+    [location]   VARCHAR (255) NULL,
+    [createdat]  DATETIME      NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    FOREIGN KEY ([userid]) REFERENCES [dbo].[users] ([id]),
+    CONSTRAINT [FK_devicesusers] FOREIGN KEY ([userid]) REFERENCES [dbo].[users] ([id])
+);
+
+CREATE TABLE [dbo].[electricity_production] (
+    [id]             INT             IDENTITY (1, 1) NOT NULL,
+    [productiontime] DATETIME        NOT NULL,
+    [amountWh]       DECIMAL (10, 2) NOT NULL,
+    [deviceid]       INT             NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    FOREIGN KEY ([deviceid]) REFERENCES [dbo].[devices] ([id]),
+    CONSTRAINT [FK_electricityproductiondevices] FOREIGN KEY ([deviceid]) REFERENCES [dbo].[devices] ([id])
+);
+
+CREATE TABLE [dbo].[events] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [event_type]   NVARCHAR (50) NOT NULL,
+    [reference_id] INT           NOT NULL,
+    [user_id]      INT           NOT NULL,
+    [timestamp]    DATETIME      NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[produce_events] (
+    [id]                      INT           IDENTITY (1, 1) NOT NULL,
+    [deviceid]                INT           NOT NULL,
+    [electricityproductionid] INT           NOT NULL,
+    [productiontime]          DATETIME      NOT NULL,
+    [event_id]                NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_produceeventsdevices] FOREIGN KEY ([deviceid]) REFERENCES [dbo].[devices] ([id]),
+    CONSTRAINT [FK_produceeventselectricityproduction] FOREIGN KEY ([electricityproductionid]) REFERENCES [dbo].[electricity_production] ([id])
+);
+
+CREATE TABLE [dbo].[users] (
+    [id]       INT           IDENTITY (1, 1) NOT NULL,
+    [username] VARCHAR (255) NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+

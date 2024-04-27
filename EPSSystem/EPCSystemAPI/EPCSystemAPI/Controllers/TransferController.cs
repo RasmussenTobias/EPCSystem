@@ -29,7 +29,7 @@ namespace EPCSystemAPI.Controllers
             var maxBundleId = await _context.TransferEvents
                 .MaxAsync(te => (int?)te.BundleId); // Use nullable int to handle null values
 
-            var bundleId = -1; // Initialize bundle ID with a default value
+            var bundleId = 0; // Initialize bundle ID with a default value
 
             // If there are existing bundle IDs, increment the maximum value by 1
             if (maxBundleId.HasValue)
