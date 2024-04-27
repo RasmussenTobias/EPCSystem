@@ -10,9 +10,7 @@ namespace EPCSystemAPI.models
         public string DeviceName { get; set; }
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
-
-        // Navigation property
         public User User { get; set; }
-        public ICollection<ElectricityProduction> ElectricityProductions { get; set; }
+        public ICollection<ElectricityProduction> ElectricityProductions { get; set; } = new List<ElectricityProduction>();
     }
 }

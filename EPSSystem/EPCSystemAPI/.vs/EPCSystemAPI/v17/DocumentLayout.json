@@ -3,28 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\tradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\tradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\transferledger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\transferledger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.produce_events.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\certificatetransferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\certificatetransferdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.events.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\tradecertificatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\tradecertificatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.electricity_production.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.certificates.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo._TransferEvents.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo._TransformEvents.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\bundle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\bundle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\transferevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\transferevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\produceevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\produceevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,80 +60,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransferLedger.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferLedger.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferLedger.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferLedger.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TransferLedger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:57:09.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CertificateTransferDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\CertificateTransferDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\CertificateTransferDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\CertificateTransferDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\CertificateTransferDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:56:47.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TradeCertificateDto.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeCertificateDto.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TradeCertificateDto.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeCertificateDto.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TradeCertificateDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:55:11.305Z",
+              "Title": "dbo.events [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.events.sql",
+              "ToolTip": "dbo.events [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T21:15:07.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TransferEvent.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferEvent.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TransferEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:54:57.696Z",
+              "Title": "dbo.certificates [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.certificates.sql",
+              "ToolTip": "dbo.certificates [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T20:36:58.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo._TransformEvents [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo._TransformEvents.sql",
+              "ToolTip": "dbo._TransformEvents [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T20:43:03.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Certificate.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Certificate.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\Certificate.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Certificate.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\Certificate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:51:54.945Z",
+              "Title": "dbo._TransferEvents [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo._TransferEvents.sql",
+              "ToolTip": "dbo._TransferEvents [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T21:10:53.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.produce_events [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.produce_events.sql",
+              "ToolTip": "dbo.produce_events [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T20:39:18.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TradeController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TradeController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TradeController.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAnwFAAAAAYAAAA",
+              "Title": "ElectricityProductionController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAYwE0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T20:50:47.176Z",
+              "WhenOpened": "2024-04-27T20:51:23.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.electricity_production [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BscPrototype/True/SqlTable/dbo.electricity_production.sql",
+              "ToolTip": "dbo.electricity_production [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-04-27T21:14:13.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TransferEvent.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferEvent.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Models\\TransferEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T20:40:59.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bundle.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Bundle.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\Bundle.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\Bundle.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Models\\Bundle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T21:01:54.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\DbContext.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
+              "RelativeToolTip": "EPCSystemAPI\\DbContext.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAswDYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T20:34:47.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProduceEvent.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ProduceEvent.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ProduceEvent.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ProduceEvent.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Models\\ProduceEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T20:57:00.599Z",
               "EditorCaption": ""
             }
           ]

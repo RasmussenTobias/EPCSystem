@@ -7,6 +7,8 @@ namespace EPCSystemAPI.models
     public class ProduceEvent
     {
         public int Id { get; set; }
+
+        public int Event_Id { get; set; }
         public int DeviceId { get; set; }
         public int ElectricityProductionId { get; set; }
         public DateTime ProductionTime { get; set; }

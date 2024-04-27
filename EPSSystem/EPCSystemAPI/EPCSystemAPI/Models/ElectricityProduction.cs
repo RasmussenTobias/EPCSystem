@@ -10,8 +10,6 @@ namespace EPCSystemAPI.models
         public DateTime ProductionTime { get; set; }
         public decimal AmountWh { get; set; }
         public int DeviceId { get; set; }
-
-        // Navigation property
         public Device Device { get; set; }
     }
 }
