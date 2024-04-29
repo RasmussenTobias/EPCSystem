@@ -103,25 +103,37 @@ namespace EPCSystemAPI.Controllers
         {
             try
             {
-                var sentTradeRequests = await _context.PendingTrades
-                    .Where(pt => pt.FromUserId == userId) // Sent by the user
-                    .GroupBy(pt => pt.BundleId) // Group by bulkId
+                // Retrieve all trades where the user is either the sender or recipient
+                var allTradeRequests = await _context.PendingTrades
+                    .Where(pt => pt.FromUserId == userId || pt.ToUserId == userId)
+                    .ToListAsync();
+
+                // Group the trades by bundleId
+                var groupedTradeRequests = allTradeRequests
+                    .GroupBy(pt => pt.BundleId)
+                    .ToList();
+
+                // Filter the groups to include only those where the user is the sender according to the first entry
+                var sentTradeRequests = groupedTradeRequests
+                    .Where(group => group.First().FromUserId == userId)
                     .Select(group => new
                     {
                         BulkId = group.Key,
-                        OfferedCertificates = group.Select(pt => new
-                        {
-                            ElectricityProductionId = pt.ElectricityProductionId,
-                            Amount = pt.Volume
-                        }).ToList(),
-                        RequestedCertificates = _context.PendingTrades
-                            .Where(pt => pt.BundleId == group.Key && pt.ToUserId == userId && pt.FromUserId != userId) // Requested by the user but not from themselves
-                            .Select(pt => new
+                        OfferedCertificates = group.First().FromUserId == userId
+                            ? group.Select(pt => new
                             {
                                 ElectricityProductionId = pt.ElectricityProductionId,
                                 Amount = pt.Volume
-                            }).ToList()
-                    }).ToListAsync();
+                            }).ToList<object>() // Explicit conversion to List<object>
+                            : new List<object>(),
+                        RequestedCertificates = group.First().ToUserId == userId
+                            ? group.Select(pt => new
+                            {
+                                ElectricityProductionId = pt.ElectricityProductionId,
+                                Amount = pt.Volume
+                            }).ToList<object>() // Explicit conversion to List<object>
+                            : new List<object>()
+                    }).ToList();
 
                 return Ok(sentTradeRequests);
             }
@@ -132,6 +144,52 @@ namespace EPCSystemAPI.Controllers
             }
         }
 
+
+        [HttpGet("ReceivedTradeRequests/{userId}")]
+        public async Task<IActionResult> GetReceivedTradeRequests(int userId)
+        {
+            try
+            {
+                // Retrieve all trades where the user is either the sender or recipient
+                var allTradeRequests = await _context.PendingTrades
+                    .Where(pt => pt.FromUserId == userId || pt.ToUserId == userId)
+                    .ToListAsync();
+
+                // Group the trades by bundleId
+                var groupedTradeRequests = allTradeRequests
+                    .GroupBy(pt => pt.BundleId)
+                    .ToList();
+
+                // Filter the groups to include only those where the user is the recipient according to the first entry
+                var receivedTradeRequests = groupedTradeRequests
+                    .Where(group => group.First().ToUserId == userId)
+                    .Select(group => new
+                    {
+                        BulkId = group.Key,
+                        OfferedCertificates = group.First().FromUserId == userId
+                            ? group.Select(pt => new
+                            {
+                                ElectricityProductionId = pt.ElectricityProductionId,
+                                Amount = pt.Volume
+                            }).ToList<object>() // Explicit conversion to List<object>
+                            : new List<object>(),
+                        RequestedCertificates = group.First().ToUserId == userId
+                            ? group.Select(pt => new
+                            {
+                                ElectricityProductionId = pt.ElectricityProductionId,
+                                Amount = pt.Volume
+                            }).ToList<object>() // Explicit conversion to List<object>
+                            : new List<object>()
+                    }).ToList();
+
+                return Ok(receivedTradeRequests);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving received trade requests: {Message}", ex.InnerException?.Message ?? ex.Message);
+                return StatusCode(500, $"An error occurred while retrieving received trade requests: {ex.InnerException?.Message ?? ex.Message}");
+            }
+        }
 
     }
 }
