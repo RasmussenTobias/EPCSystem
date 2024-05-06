@@ -23,7 +23,7 @@ namespace EPCSystemAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> TradeCertificate([FromBody] TradeCertificateDto tradeDto)
+        public async Task<IActionResult> ExecuteTransfer([FromBody] TradeCertificateDto tradeDto)
         {
             // Find the maximum bundle ID in the TransferEvents table
             var maxBundleId = await _context.TransferEvents

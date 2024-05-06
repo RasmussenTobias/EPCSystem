@@ -4,12 +4,8 @@ namespace EPCSystemAPI.models
 {
     public class UserBalanceView
     {
-        [Column("UserId")]
         public int UserId { get; set; }
-        [Column("Username")]
-        public string Username { get; set; }
-        
-        [Column("TotalBalance")]
-        public decimal TotalTransactionAmount { get; set; }
+        public int ElectricityProductionId { get; set; }
+        public decimal Balance { get; set; }
     }
 }

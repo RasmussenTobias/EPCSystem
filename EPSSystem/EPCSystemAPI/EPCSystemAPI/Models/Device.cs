@@ -8,6 +8,8 @@ namespace EPCSystemAPI.models
         public int Id { get; set; }
         public int UserId { get; set; }
         public string DeviceName { get; set; }
+        public string PowerType { get; set; }
+        public string DeviceType { get; set; }
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
         public User User { get; set; }

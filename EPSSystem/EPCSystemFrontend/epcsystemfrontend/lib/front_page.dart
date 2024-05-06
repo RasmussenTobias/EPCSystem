@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'user_service.dart';
 import 'device_page.dart'; // Import DevicePage widget
 import 'login_page.dart';
+import 'user_balance_page.dart'; // Import UserBalancePage
 
 class FrontPage extends StatefulWidget {
   final Map<String, dynamic> selectedUser; // Pass both user ID and username as a map
@@ -58,28 +59,13 @@ class _FrontPageState extends State<FrontPage> {
             child: Column(
               children: [
                 Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Buy and sell electricity certificates',
-                        style: TextStyle(fontSize: 24.0),
-                      ),
-                      SizedBox(height: 20.0),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Navigate to another page to buy/sell certificates
-                        },
-                        child: Text('Get Started'),
-                      ),
-                    ],
-                  ),
+                  child: UserBalancePage(userId: widget.selectedUser['id']),
                 ),
                 Expanded(
                   child: DevicePage(
-                    userId: widget.selectedUser['id'],
+                    userId: widget.selectedUser['id'], // Remove this line
                     username: widget.selectedUser['username'],
-                  ), // Pass both user ID and username to DevicePage
+                  ), // Pass username only to DevicePage
                 ),
               ],
             ),
