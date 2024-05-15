@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\bsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\bsystem\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\bsystem\\bsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B755B8AD-3FF4-4AB0-BECF-B7D1DBBB5E0F}|BSystem\\BSystem.csproj|solutionrelative:bsystem\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,6 +55,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BSystem\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BSystem\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA4wC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:47:11.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\DbContext.cs",
+              "RelativeDocumentMoniker": "BSystem\\DbContext.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\DbContext.cs",
+              "RelativeToolTip": "BSystem\\DbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:43:38.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Program.cs",
+              "RelativeDocumentMoniker": "BSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Program.cs",
+              "RelativeToolTip": "BSystem\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:40:33.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "BSystem\\Controllers\\TransactionController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "BSystem\\Controllers\\TransactionController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAIwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:39:49.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BSystem\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BSystem\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABMAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:39:11.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Models\\Transaction.cs",
               "RelativeDocumentMoniker": "BSystem\\Models\\Transaction.cs",
@@ -47,26 +132,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Models\\Account.cs",
               "RelativeDocumentMoniker": "BSystem\\Models\\Account.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Models\\Account.cs",
               "RelativeToolTip": "BSystem\\Models\\Account.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T15:54:39.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Models\\User.cs",
               "RelativeDocumentMoniker": "BSystem\\Models\\User.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\BSystem\\BSystem\\Models\\User.cs",
               "RelativeToolTip": "BSystem\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T15:54:33.409Z",
               "EditorCaption": ""

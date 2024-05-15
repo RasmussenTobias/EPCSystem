@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\controllers\\transactionmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\controllers\\transactionmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\models\\transactionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\models\\transactionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\models\\transactionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\models\\transactionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\tmsystem\\tmsystem\\models\\transactionlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25EECA42-A530-415C-8B06-FCE0F9834D73}|TMSystem\\TMSystem.csproj|solutionrelative:tmsystem\\models\\transactionlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +34,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransactionManagerController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Controllers\\TransactionManagerController.cs",
+              "RelativeDocumentMoniker": "TMSystem\\Controllers\\TransactionManagerController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Controllers\\TransactionManagerController.cs",
+              "RelativeToolTip": "TMSystem\\Controllers\\TransactionManagerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T14:14:28.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Program.cs",
+              "RelativeDocumentMoniker": "TMSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Program.cs",
+              "RelativeToolTip": "TMSystem\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T14:12:47.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\DbContext.cs",
+              "RelativeDocumentMoniker": "TMSystem\\DbContext.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\DbContext.cs",
+              "RelativeToolTip": "TMSystem\\DbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:54:26.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TransactionLog.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionLog.cs",
+              "RelativeDocumentMoniker": "TMSystem\\Models\\TransactionLog.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionLog.cs",
+              "RelativeToolTip": "TMSystem\\Models\\TransactionLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:53:38.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TransactionStatus.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionStatus.cs",
+              "RelativeDocumentMoniker": "TMSystem\\Models\\TransactionStatus.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionStatus.cs",
+              "RelativeToolTip": "TMSystem\\Models\\TransactionStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:53:22.769Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -18,6 +108,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TransactionRequest.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionRequest.cs",
+              "RelativeDocumentMoniker": "TMSystem\\Models\\TransactionRequest.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\TMSystem\\TMSystem\\Models\\TransactionRequest.cs",
+              "RelativeToolTip": "TMSystem\\Models\\TransactionRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:53:12.187Z",
+              "EditorCaption": ""
             }
           ]
         }

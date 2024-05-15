@@ -10,6 +10,7 @@ namespace EPCSystemAPI.models
         public int ElectricityProductionId { get; set; }
         public DateTime CreatedAt { get; set; }
         public decimal Volume { get; set; }
+        public decimal CurrentVolume { get; set; }  // Add this property
         public User User { get; set; }
         public ElectricityProduction ElectricityProduction { get; set; }
     }

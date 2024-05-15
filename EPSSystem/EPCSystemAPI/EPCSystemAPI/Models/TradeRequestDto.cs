@@ -23,4 +23,5 @@ namespace EPCSystemAPI.models
         public int Amount { get; set; }
         public int ElectricityProductionId { get; set; } // Added property for currency
     }
+
 }

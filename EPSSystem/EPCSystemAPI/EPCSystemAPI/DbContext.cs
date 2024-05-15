@@ -20,7 +20,8 @@ namespace EPCSystemAPI
         public DbSet<TransformEvent> TransformEvents { get; set; }
         public DbSet<ProduceEvent> ProduceEvents { get; set; }
         public DbSet<PendingTrade> PendingTrades { get; set; }
-        public DbSet<UserBalanceView> UserBalanceView { get; set; } 
+        public DbSet<UserBalanceView> UserBalanceView { get; set; }
+        public DbSet<UserEventView> UserEventViews { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -92,6 +93,8 @@ namespace EPCSystemAPI
 
             modelBuilder.Entity<UserBalanceView>().ToView("UserBalanceView");
             modelBuilder.Entity<UserBalanceView>().HasNoKey();
+
+            modelBuilder.Entity<UserEventView>().HasNoKey().ToView("UserEventView");
         }
     }
 }

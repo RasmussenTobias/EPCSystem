@@ -6,20 +6,16 @@ namespace EPCSystemAPI.models
 {
     public class TransformEvent
     {
-        [Key]
         public int Id { get; set; }
-        public int LedgerId { get; set; }
+        public int? OriginalCertificateId { get; set; }
         public int DeviceId { get; set; }
-        public int ElectricityProductionId { get; set; }
-        public decimal AmountWh { get; set; }
+        public string TransformationDetails { get; set; }
+        public DateTime TransformationTimestamp { get; set; }
+        public decimal TransformedVolume { get; set; }
+        public int? PreviousTransformEventId { get; set; }
 
-        [ForeignKey("LedgerId")]
-        public Ledger Ledger { get; set; }
-
-        [ForeignKey("DeviceId")]
+        public Certificate OriginalCertificate { get; set; }
         public Device Device { get; set; }
-
-        [ForeignKey("ElectricityProductionId")]
-        public ElectricityProduction ElectricityProduction { get; set; }
+        public TransformEvent PreviousTransformEvent { get; set; }
     }
 }

@@ -7,6 +7,6 @@ namespace TMSystem
     {
         public TmsContext(DbContextOptions<TmsContext> options) : base(options) { }
 
-        public DbSet<TransactionRecord> TransactionRecords { get; set; }
+        public DbSet<TransactionLog> TransactionRecords { get; set; }
     }
 }

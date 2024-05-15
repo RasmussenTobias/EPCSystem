@@ -3,7 +3,9 @@ using System.Threading.Tasks;
 using EPCSystemAPI.Models;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using EPCSystemAPI.models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EPCSystemAPI.Controllers
 {
@@ -13,11 +15,13 @@ namespace EPCSystemAPI.Controllers
     {
         private readonly ILogger<TradeController> _logger;
         private readonly ITransactionManagementService _tmsService;
+        private readonly ApplicationDbContext _context;
 
-        public TradeController(ILogger<TradeController> logger, ITransactionManagementService tmsService)
+        public TradeController(ILogger<TradeController> logger, ITransactionManagementService tmsService, ApplicationDbContext context)
         {
             _logger = logger;
             _tmsService = tmsService;
+            _context = context;
         }
 
         [HttpPost("initiateTrade")]
@@ -25,6 +29,7 @@ namespace EPCSystemAPI.Controllers
         {
             try
             {
+                // Validation phase
                 var validation = await ValidateTradeRequest(tradeRequest);
                 if (!validation.IsValid)
                 {
@@ -59,7 +64,21 @@ namespace EPCSystemAPI.Controllers
 
         private async Task<ValidationResult> ValidateTradeRequest(TradeRequestDto tradeRequest)
         {
-            // Example validation logic (extend as needed)
+            foreach (var offeredCertificate in tradeRequest.OfferedCertificates)
+            {
+                var userBalance = await _context.UserBalanceView
+                    .FirstOrDefaultAsync(ub => ub.UserId == tradeRequest.FromUserId && ub.ElectricityProductionId == offeredCertificate.ElectricityProductionId);
+
+                if (userBalance == null || userBalance.Balance < offeredCertificate.Amount)
+                {
+                    return new ValidationResult
+                    {
+                        IsValid = false,
+                        ErrorMessage = $"Insufficient balance for ElectricityProductionId {offeredCertificate.ElectricityProductionId}."
+                    };
+                }
+            }
+
             return new ValidationResult { IsValid = true };
         }
     }

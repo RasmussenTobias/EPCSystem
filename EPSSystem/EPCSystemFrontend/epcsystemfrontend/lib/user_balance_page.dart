@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'user_balance_service.dart'; // Import UserBalanceService
 import 'user_balance.dart'; // Import UserBalance model
+import 'transfer_page.dart'; // Import TransferPage
 
 class UserBalancePage extends StatefulWidget {
   final int userId;
@@ -20,11 +21,45 @@ class _UserBalancePageState extends State<UserBalancePage> {
     _userBalanceFuture = UserBalanceService.getUserBalance(widget.userId);
   }
 
+  // Callback function to update account balances
+  void _updateBalance() {
+    setState(() {
+      _userBalanceFuture = UserBalanceService.getUserBalance(widget.userId);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account Balances'),
+        title: Row(
+          children: [
+            Expanded(
+              child: Text('Account Balances'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Navigate to TransferPage and pass the callback function
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TransferPage(
+                      fromUserId: widget.userId,
+                      onUpdateBalance: _updateBalance, // Pass the callback function
+                    ),
+                  ),
+                );
+              },
+              child: Text(
+                'Transfer',
+                style: TextStyle(color: Colors.white),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+              ),
+            ),
+          ],
+        ),
       ),
       body: FutureBuilder(
         future: _userBalanceFuture,
@@ -84,7 +119,7 @@ class _UserBalancePageState extends State<UserBalancePage> {
                       balance.deviceName,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8),                    
+                    SizedBox(width: 8),
                   ],
                 ),
                 SizedBox(height: 4), // Add some space between device name and ElectricityProductionId
@@ -104,5 +139,4 @@ class _UserBalancePageState extends State<UserBalancePage> {
       ],
     );
   }
-
 }

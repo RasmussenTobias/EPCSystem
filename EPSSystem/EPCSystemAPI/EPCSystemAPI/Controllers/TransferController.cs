@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using EPCSystemAPI.models;
+using EPCSystemAPI.Models;  // Ensure correct namespace
 using Microsoft.Extensions.Logging;
-using System.Text.Json;
+using EPCSystemAPI.models;
 
 namespace EPCSystemAPI.Controllers
 {
@@ -29,13 +29,7 @@ namespace EPCSystemAPI.Controllers
             var maxBundleId = await _context.TransferEvents
                 .MaxAsync(te => (int?)te.BundleId); // Use nullable int to handle null values
 
-            var bundleId = 0; // Initialize bundle ID with a default value
-
-            // If there are existing bundle IDs, increment the maximum value by 1
-            if (maxBundleId.HasValue)
-            {
-                bundleId = maxBundleId.Value + 1;
-            }
+            var bundleId = maxBundleId.HasValue ? maxBundleId.Value + 1 : 0; // Initialize bundle ID
 
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
@@ -57,41 +51,38 @@ namespace EPCSystemAPI.Controllers
                             return BadRequest($"User {tradeDto.FromUserId} does not own certificate ID {certTransfer.CertificateId}");
                         }
 
-                        if (originalCertificate.Volume < certTransfer.Amount)
+                        if (originalCertificate.CurrentVolume < certTransfer.Amount)
                         {
-                            return BadRequest($"Insufficient certificate volume for transfer. Available: {originalCertificate.Volume}, Attempted to transfer: {certTransfer.Amount}");
+                            return BadRequest($"Insufficient certificate volume for transfer. Available: {originalCertificate.CurrentVolume}, Attempted to transfer: {certTransfer.Amount}");
                         }
 
-                        if (certTransfer.Amount == originalCertificate.Volume)
+                        // Calculate the remaining volume
+                        var remainingVolume = originalCertificate.CurrentVolume - certTransfer.Amount;
+
+                        // Create a new certificate for the from user with the remaining volume
+                        if (remainingVolume > 0)
                         {
-                            originalCertificate.UserId = tradeDto.ToUserId;
-                        }
-                        else
-                        {
-                            // Create a new certificate for the receiver with the transferred volume
-                            var receiverCertificate = new Certificate
+                            var fromUserCertificate = new Certificate
                             {
-                                UserId = tradeDto.ToUserId,
+                                UserId = tradeDto.FromUserId,
                                 ElectricityProductionId = originalCertificate.ElectricityProductionId,
                                 CreatedAt = DateTime.Now,
-                                Volume = certTransfer.Amount
+                                Volume = remainingVolume,
+                                CurrentVolume = remainingVolume
                             };
-                            _context.Certificates.Add(receiverCertificate);
-
-                            // Create a new certificate for the remaining volume
-                            var remainingVolume = originalCertificate.Volume - certTransfer.Amount;
-                            var remainingCertificate = new Certificate
-                            {
-                                UserId = originalCertificate.UserId,
-                                ElectricityProductionId = originalCertificate.ElectricityProductionId,
-                                CreatedAt = DateTime.Now,
-                                Volume = remainingVolume
-                            };
-                            _context.Certificates.Add(remainingCertificate);
-
-                            // Mark the original certificate for deletion
-                            _context.Certificates.Remove(originalCertificate);
+                            _context.Certificates.Add(fromUserCertificate);
                         }
+
+                        // Create a new certificate for the receiver with the transferred volume
+                        var receiverCertificate = new Certificate
+                        {
+                            UserId = tradeDto.ToUserId,
+                            ElectricityProductionId = originalCertificate.ElectricityProductionId,
+                            CreatedAt = DateTime.Now,
+                            Volume = certTransfer.Amount,
+                            CurrentVolume = certTransfer.Amount
+                        };
+                        _context.Certificates.Add(receiverCertificate);
 
                         // Create an event record for the transfer
                         var transferEvent = new Event
@@ -124,11 +115,12 @@ namespace EPCSystemAPI.Controllers
 
                         // Save changes again to update the Reference_Id in the Event entity
                         await _context.SaveChangesAsync();
+
+                        // Remove the original certificate
+                        _context.Certificates.Remove(originalCertificate);
                     }
 
-                    await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
-
                     return Ok("Certificates traded successfully");
                 }
                 catch (Exception ex)
