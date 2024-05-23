@@ -29,92 +29,69 @@ namespace EPCSystemAPI.Controllers
             {
                 try
                 {
-                    TransformEvent lastTransformEvent = null;
+                    int bundleId = await _context.TransformEvents.MaxAsync(te => (int?)te.BundleId) ?? 0;
+                    bundleId++;
 
-                    // Validate that the user has enough certificates for the inputs
                     foreach (var input in transformRequest.Inputs)
                     {
-                        var certificate = await _context.Certificates
+                        var fromCertificate = await _context.Certificates
                             .Include(c => c.ElectricityProduction)
                             .FirstOrDefaultAsync(c => c.Id == input.CertificateId && c.UserId == transformRequest.FromUserId);
 
-                        if (certificate == null)
+                        if (fromCertificate == null)
                         {
                             _logger.LogError($"Certificate with ID {input.CertificateId} not found for user {transformRequest.FromUserId}");
                             return NotFound($"Certificate with ID {input.CertificateId} not found for user {transformRequest.FromUserId}");
                         }
 
-                        if (certificate.CurrentVolume < input.Amount)
+                        if (fromCertificate.CurrentVolume < input.Amount)
                         {
-                            _logger.LogError($"Insufficient volume for certificate ID {input.CertificateId}. Available: {certificate.CurrentVolume}, Required: {input.Amount}");
-                            return BadRequest($"Insufficient volume for certificate ID {input.CertificateId}. Available: {certificate.CurrentVolume}, Required: {input.Amount}");
+                            _logger.LogError($"Insufficient volume for certificate ID {input.CertificateId}. Available: {fromCertificate.CurrentVolume}, Required: {input.Amount}");
+                            return BadRequest($"Insufficient volume for certificate ID {input.CertificateId}. Available: {fromCertificate.CurrentVolume}, Required: {input.Amount}");
                         }
 
-                        // Update the current volume of the input certificate
-                        certificate.CurrentVolume -= input.Amount;
-                        _context.Entry(certificate).State = EntityState.Modified; // Ensure the certificate is marked as modified
+                        // Update the current volume of the fromCertificate
+                        fromCertificate.CurrentVolume -= input.Amount;
+                        _context.Entry(fromCertificate).State = EntityState.Modified; // Ensure the certificate is marked as modified
 
-                        // Log transformation event for input
-                        _logger.LogInformation("Creating transformation event for input certificate ID {CertificateId}", certificate.Id);
-                        var inputTransformEvent = new TransformEvent
+                        // Create a new certificate for the ToUser with the input amount
+                        var newCertificate = new Certificate
                         {
-                            OriginalCertificateId = certificate.Id,
-                            TransformationDetails = transformRequest.TransformationDetails,
-                            TransformationTimestamp = DateTime.UtcNow,
-                            TransformedVolume = -input.Amount,
-                            PreviousTransformEventId = lastTransformEvent?.Id
+                            UserId = transformRequest.ToUserId,
+                            ElectricityProductionId = fromCertificate.ElectricityProductionId,
+                            CreatedAt = DateTime.UtcNow,
+                            Volume = input.Amount,
+                            CurrentVolume = input.Amount
                         };
-                        await _context.TransformEvents.AddAsync(inputTransformEvent);
+                        await _context.Certificates.AddAsync(newCertificate);
                         await _context.SaveChangesAsync();
 
-                        // Set lastTransformEvent to the current inputTransformEvent
-                        lastTransformEvent = inputTransformEvent;
+                        // Log transformation event
+                        var transformEvent = new TransformEvent
+                        {
+                            OriginalCertificateId = fromCertificate.Id,
+                            NewCertificateId = newCertificate.Id,
+                            FromUserId = transformRequest.FromUserId,
+                            ToUserId = transformRequest.ToUserId,
+                            BundleId = bundleId,
+                            TransformedVolume = input.Amount,
+                            TransformationDetails = transformRequest.TransformationDetails,
+                            TransformationTimestamp = DateTime.UtcNow
+                        };
+                        await _context.TransformEvents.AddAsync(transformEvent);
+                        await _context.SaveChangesAsync();
+
+                        // Create an event record for the transformation
+                        var eventRecord = new Event
+                        {
+                            Event_Type = "TRANSFORM",
+                            Reference_Id = transformEvent.Id,
+                            User_Id = transformRequest.FromUserId,
+                            Timestamp = DateTime.UtcNow
+                        };
+                        await _context.Events.AddAsync(eventRecord);
+                        await _context.SaveChangesAsync();
                     }
-
-                    // Calculate total input volume and total loss
-                    var totalInputVolume = transformRequest.Inputs.Sum(input => input.Amount);
-                    var totalLoss = transformRequest.Loss;
-
-                    // Calculate the adjusted output volume after accounting for loss
-                    var adjustedOutputVolume = totalInputVolume - totalLoss;
-
-                    if (adjustedOutputVolume < 0)
-                    {
-                        adjustedOutputVolume = 0; // Ensure we do not have negative amounts
-                    }
-
-                    // Create a new certificate for the ToUser with the adjusted output volume
-                    var firstInputCertificate = await _context.Certificates
-                        .FirstOrDefaultAsync(c => c.Id == transformRequest.Inputs.First().CertificateId);
-
-                    if (firstInputCertificate == null)
-                    {
-                        _logger.LogError("First input certificate not found for the transformation.");
-                        return NotFound("First input certificate not found for the transformation.");
-                    }
-
-                    var newCertificate = new Certificate
-                    {
-                        UserId = transformRequest.ToUserId,
-                        ElectricityProductionId = firstInputCertificate.ElectricityProductionId,
-                        CreatedAt = DateTime.UtcNow,
-                        Volume = adjustedOutputVolume,
-                        CurrentVolume = adjustedOutputVolume
-                    };
-                    await _context.Certificates.AddAsync(newCertificate);
-                    await _context.SaveChangesAsync();
-
-                    // Log transformation event for the output
-                    _logger.LogInformation("Creating transformation event for new certificate ID {CertificateId}", newCertificate.Id);
-                    var outputTransformEvent = new TransformEvent
-                    {
-                        OriginalCertificateId = newCertificate.Id,
-                        TransformationDetails = transformRequest.TransformationDetails,
-                        TransformationTimestamp = DateTime.UtcNow,
-                        TransformedVolume = adjustedOutputVolume,
-                        PreviousTransformEventId = lastTransformEvent?.Id // Link to the last input transform event
-                    };
-                    await _context.TransformEvents.AddAsync(outputTransformEvent);
 
                     // Commit the transaction
                     await transaction.CommitAsync();
