@@ -56,22 +56,9 @@ namespace EPCSystemAPI.Controllers
                             return BadRequest($"Insufficient certificate volume for transfer. Available: {originalCertificate.CurrentVolume}, Attempted to transfer: {certTransfer.Amount}");
                         }
 
-                        // Calculate the remaining volume
-                        var remainingVolume = originalCertificate.CurrentVolume - certTransfer.Amount;
-
-                        // Create a new certificate for the from user with the remaining volume
-                        if (remainingVolume > 0)
-                        {
-                            var fromUserCertificate = new Certificate
-                            {
-                                UserId = tradeDto.FromUserId,
-                                ElectricityProductionId = originalCertificate.ElectricityProductionId,
-                                CreatedAt = DateTime.Now,
-                                Volume = remainingVolume,
-                                CurrentVolume = remainingVolume
-                            };
-                            _context.Certificates.Add(fromUserCertificate);
-                        }
+                        // Deduct the volume from the original certificate
+                        originalCertificate.CurrentVolume -= certTransfer.Amount;
+                        _context.Certificates.Update(originalCertificate);
 
                         // Create a new certificate for the receiver with the transferred volume
                         var receiverCertificate = new Certificate
@@ -115,9 +102,6 @@ namespace EPCSystemAPI.Controllers
 
                         // Save changes again to update the Reference_Id in the Event entity
                         await _context.SaveChangesAsync();
-
-                        // Remove the original certificate
-                        _context.Certificates.Remove(originalCertificate);
                     }
 
                     await transaction.CommitAsync();

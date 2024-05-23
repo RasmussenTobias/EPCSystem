@@ -28,7 +28,6 @@ namespace EPCSystemAPI
         {
             base.OnModelCreating(modelBuilder);
 
-
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Devices)
                 .WithOne(d => d.User)
@@ -41,20 +40,18 @@ namespace EPCSystemAPI
                 .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Device> ()
+            modelBuilder.Entity<Device>()
                 .HasMany(d => d.ElectricityProductions)
                 .WithOne(e => e.Device)
                 .HasForeignKey(e => e.DeviceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ElectricityProduction entity
             modelBuilder.Entity<ElectricityProduction>()
                 .HasOne(e => e.Device)
                 .WithMany(d => d.ElectricityProductions)
                 .HasForeignKey(e => e.DeviceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Certificate entity
             modelBuilder.Entity<Certificate>()
                 .HasOne(c => c.User)
                 .WithMany(u => u.Certificates)
@@ -65,17 +62,16 @@ namespace EPCSystemAPI
                 .HasOne<ElectricityProduction>(c => c.ElectricityProduction)
                 .WithMany()  // or specify the collection if there is one
                 .HasForeignKey(c => c.ElectricityProductionId)
-                .OnDelete(DeleteBehavior.Cascade);  
-
+                .OnDelete(DeleteBehavior.Restrict);  // Change to Restrict to avoid cascading delete
 
             modelBuilder.Entity<ProduceLedger>()
-                    .ToTable("ProduceLedger");
+                .ToTable("ProduceLedger");
 
             modelBuilder.Entity<TransferLedger>()
-               .ToTable("TransferLedger");
+                .ToTable("TransferLedger");
 
             modelBuilder.Entity<TransformLedger>()
-               .ToTable("TransformLedger");
+                .ToTable("TransformLedger");
 
             modelBuilder.Entity<TransferEvent>()
                 .ToTable("_TransferEvents");
@@ -86,15 +82,11 @@ namespace EPCSystemAPI
             modelBuilder.Entity<ProduceEvent>()
                 .ToTable("produce_events");
 
-            modelBuilder.Entity<Certificate>()
-                .HasOne(c => c.ElectricityProduction)
-                .WithOne()
-                .HasForeignKey<Certificate>(c => c.ElectricityProductionId);
-
             modelBuilder.Entity<UserBalanceView>().ToView("UserBalanceView");
             modelBuilder.Entity<UserBalanceView>().HasNoKey();
 
             modelBuilder.Entity<UserEventView>().HasNoKey().ToView("UserEventView");
         }
+
     }
 }

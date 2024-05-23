@@ -8,14 +8,12 @@ namespace EPCSystemAPI.models
     {
         public int Id { get; set; }
         public int? OriginalCertificateId { get; set; }
-        public int DeviceId { get; set; }
         public string TransformationDetails { get; set; }
         public DateTime TransformationTimestamp { get; set; }
         public decimal TransformedVolume { get; set; }
         public int? PreviousTransformEventId { get; set; }
 
         public Certificate OriginalCertificate { get; set; }
-        public Device Device { get; set; }
         public TransformEvent PreviousTransformEvent { get; set; }
     }
 }
