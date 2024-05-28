@@ -58,6 +58,8 @@ namespace EPCSystemAPI.Controllers
             {
                 UserId = deviceInput.UserId,
                 DeviceName = deviceInput.DeviceName,
+                PowerType = deviceInput.PowerType,
+                DeviceType = deviceInput.DeviceType,
                 Location = deviceInput.Location,
                 CreatedAt = DateTime.UtcNow 
             };

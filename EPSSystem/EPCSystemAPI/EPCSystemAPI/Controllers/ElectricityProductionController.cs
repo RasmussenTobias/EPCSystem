@@ -50,7 +50,9 @@ public class ElectricityProductionController : ControllerBase
                 UserId = device.UserId,
                 ElectricityProductionId = electricityProduction.Id,
                 CreatedAt = DateTime.Now,
-                Volume = model.AmountWh
+                Volume = model.AmountWh,
+                CurrentVolume = model.AmountWh
+             
             };
             _context.Certificates.Add(certificate);
 
