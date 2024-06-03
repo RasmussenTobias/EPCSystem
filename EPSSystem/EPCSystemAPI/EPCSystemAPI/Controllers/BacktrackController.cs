@@ -104,17 +104,7 @@ namespace EPCSystemAPI.Controllers
             var certificate = await _context.Certificates
                 .Include(c => c.ElectricityProduction)
                 .ThenInclude(ep => ep.Device)
-                .FirstOrDefaultAsync(c => c.Id == certificateId);
-
-            if (certificate == null)
-            {
-                _logger.LogError($"Certificate with ID {certificateId} not found.");
-                return new CertificateHistory
-                {
-                    CertificateId = certificateId,
-                    Error = "Certificate not found"
-                };
-            }
+                .FirstOrDefaultAsync(c => c.Id == certificateId);            
 
             var history = new CertificateHistory
             {
@@ -172,7 +162,6 @@ namespace EPCSystemAPI.Controllers
         public string DeviceLocation { get; set; }
         public decimal? TransformedVolume { get; set; }
         public DateTime TransformationTimestamp { get; set; }
-        public string Error { get; set; }
         public List<CertificateHistory> Inputs { get; set; } = new List<CertificateHistory>();
     }
 }
