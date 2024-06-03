@@ -64,6 +64,16 @@ namespace EPCSystemAPI
                 .HasForeignKey(c => c.ElectricityProductionId)
                 .OnDelete(DeleteBehavior.Restrict);  // Change to Restrict to avoid cascading delete
 
+            modelBuilder.Entity<Certificate>()
+                .HasOne(c => c.ParentCertificate)
+                .WithMany(c => c.ChildCertificates)
+                .HasForeignKey(c => c.ParentCertificateId);
+
+            modelBuilder.Entity<TransformEvent>()
+                .HasOne(te => te.RootCertificate)
+                .WithMany()
+                .HasForeignKey(te => te.RootCertificateId);
+
             modelBuilder.Entity<ProduceLedger>()
                 .ToTable("ProduceLedger");
 

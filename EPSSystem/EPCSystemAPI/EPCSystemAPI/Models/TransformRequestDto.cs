@@ -7,16 +7,16 @@ namespace EPCSystemAPI.models
 {
     public class TransformRequestDto
     {
-        public int FromUserId { get; set; }
-        public int ToUserId { get; set; }
-        public string TransformationDetails { get; set; }
-        public List<CertificateInputDto> Inputs { get; set; }
-        public decimal Loss { get; set; } // Property for transformation loss
+        public int DeviceId { get; set; }
+        public DateTime ProductionTime { get; set; }
+        public decimal AmountWh { get; set; }
+        public List<TransformInputDto> Inputs { get; set; }
     }
 
-    public class CertificateInputDto
+    public class TransformInputDto
     {
         public int CertificateId { get; set; }
         public decimal Amount { get; set; }
-    }    
+    }
+
 }

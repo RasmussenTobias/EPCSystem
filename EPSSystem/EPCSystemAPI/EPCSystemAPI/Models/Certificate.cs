@@ -13,5 +13,9 @@ namespace EPCSystemAPI.models
         public decimal CurrentVolume { get; set; }  // Add this property
         public User User { get; set; }
         public ElectricityProduction ElectricityProduction { get; set; }
+
+        public int? ParentCertificateId { get; set; }
+        public Certificate ParentCertificate { get; set; }
+        public ICollection<Certificate> ChildCertificates { get; set; }
     }
 }
