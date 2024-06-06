@@ -28,13 +28,13 @@ namespace EPCSystemAPI.Controllers
         {
             try
             {
-                var result = await GetCertificateHistory(certificateId);
-                var totalEmissions = CalculateTotalEmissions(result);
+                var history = await GetCertificateHistory(certificateId);
+                var totalEmissions = CalculateTotalEmissions(history);
 
                 var response = new CertificateHistoryResponse
                 {
                     TotalEmissions = totalEmissions,
-                    Tracing = result
+                    Tracing = history
                 };
 
                 return Ok(response);
@@ -46,76 +46,10 @@ namespace EPCSystemAPI.Controllers
             }
         }
 
-        [HttpGet("originals")]
-        public async Task<IActionResult> GetOriginalCertificates([FromQuery] int certificateId)
-        {
-            try
-            {
-                var backtrackResult = await GetCertificateHistory(certificateId);
-                var originalCertificates = ExtractOriginalCertificates(backtrackResult);
-                var totalEmissions = originalCertificates.Sum(c => c.TotalEmissions ?? 0);
-
-                var response = new CertificateHistoryResponse
-                {
-                    TotalEmissions = totalEmissions,
-                    Tracing = backtrackResult,
-                    Originals = originalCertificates
-                };
-
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error during fetching original certificates: {Message}", ex.Message);
-                return StatusCode(500, $"Internal server error during fetching original certificates: {ex.Message}");
-            }
-        }
-
         private async Task<CertificateHistory> GetCertificateHistory(int certificateId)
         {
             var processedCertificates = new HashSet<(int, int)>(); // Using a tuple to track certificate and bundle id
             return await BuildCertificateHistory(certificateId, processedCertificates);
-        }
-
-        private List<CertificateHistory> ExtractOriginalCertificates(CertificateHistory certificateHistory)
-        {
-            var originalCertificates = new Dictionary<int, CertificateHistory>();
-            TraverseHistory(certificateHistory, originalCertificates);
-            return originalCertificates.Values.ToList();
-        }
-
-        private void TraverseHistory(CertificateHistory history, Dictionary<int, CertificateHistory> originalCertificates)
-        {
-            if (history.Inputs.Count == 0)
-            {
-                if (originalCertificates.ContainsKey(history.CertificateId))
-                {
-                    originalCertificates[history.CertificateId].TransformedVolume += history.TransformedVolume ?? 0;
-                }
-                else
-                {
-                    originalCertificates[history.CertificateId] = new CertificateHistory
-                    {
-                        CertificateId = history.CertificateId,
-                        DeviceId = history.DeviceId,
-                        PowerType = history.PowerType,
-                        DeviceName = history.DeviceName,
-                        DeviceType = history.DeviceType,
-                        DeviceLocation = history.DeviceLocation,
-                        EmissionFactor = history.EmissionFactor,
-                        TotalEmissions = history.TransformedVolume ?? 0 * history.EmissionFactor ?? 0,
-                        TransformedVolume = history.TransformedVolume ?? 0,
-                        TransformationTimestamp = history.TransformationTimestamp
-                    };
-                }
-            }
-            else
-            {
-                foreach (var input in history.Inputs)
-                {
-                    TraverseHistory(input, originalCertificates);
-                }
-            }
         }
 
         private async Task<CertificateHistory> BuildCertificateHistory(int certificateId, HashSet<(int, int)> processedCertificates)
@@ -146,8 +80,8 @@ namespace EPCSystemAPI.Controllers
                 DeviceType = certificate.ElectricityProduction?.Device?.DeviceType,
                 DeviceLocation = certificate.ElectricityProduction?.Device?.Location,
                 EmissionFactor = emissionFactor,
-                TotalEmissions = (certificate.CurrentVolume) * emissionFactor,
-                TransformationTimestamp = certificate.CreatedAt // Assuming the certificate's creation time as the transformation time
+                TransformedVolume = certificate.CurrentVolume,
+                TransformationTimestamp = certificate.CreatedAt
             };
 
             processedCertificates.Add((certificateId, certificate.ElectricityProduction?.DeviceId ?? 0));
@@ -158,44 +92,69 @@ namespace EPCSystemAPI.Controllers
                 .OrderBy(te => te.TransformationTimestamp)
                 .ToListAsync();
 
-            foreach (var transformEvent in transformEventsAsNew)
+            if (transformEventsAsNew.Any())
             {
-                // Get all events with the same BundleId
-                var inputs = await _context.TransformEvents
-                    .Where(te => te.BundleId == transformEvent.BundleId)
-                    .ToListAsync();
-
-                foreach (var inputEvent in inputs)
+                decimal totalInputVolume = 0;
+                foreach (var transformEvent in transformEventsAsNew)
                 {
-                    var key = (inputEvent.RootCertificateId, inputEvent.BundleId.Value);
-                    if (!processedCertificates.Contains(key))
+                    var inputs = await _context.TransformEvents
+                        .Where(te => te.BundleId == transformEvent.BundleId)
+                        .ToListAsync();
+
+                    foreach (var inputEvent in inputs)
                     {
-                        processedCertificates.Add(key);
-                        var inputHistory = await BuildCertificateHistory(inputEvent.RootCertificateId, processedCertificates);
-                        if (inputHistory != null)
+                        var key = (inputEvent.RootCertificateId, inputEvent.BundleId.Value);
+                        if (!processedCertificates.Contains(key))
                         {
-                            inputHistory.TransformedVolume = inputEvent.TransformedVolume;
-                            inputHistory.TotalEmissions = inputHistory.TransformedVolume * inputHistory.EmissionFactor;
-                            history.Inputs.Add(inputHistory);
+                            processedCertificates.Add(key);
+                            var inputHistory = await BuildCertificateHistory(inputEvent.RootCertificateId, processedCertificates);
+                            if (inputHistory != null)
+                            {
+                                inputHistory.TransformedVolume = inputEvent.TransformedVolume;
+
+                                // If the input has no further inputs, its input volume is its transformed volume
+                                if (inputHistory.Inputs.Count == 0)
+                                {
+                                    inputHistory.InputVolume = inputHistory.TransformedVolume ?? 0;
+                                }
+                                else
+                                {
+                                    // Sum the input volumes of all inputs
+                                    inputHistory.InputVolume = inputHistory.Inputs.Sum(i => i.TransformedVolume ?? 0);
+                                }
+
+                                inputHistory.TotalEmissions = (inputHistory.InputVolume ?? 0) * inputHistory.EmissionFactor.GetValueOrDefault();
+                                history.Inputs.Add(inputHistory);
+                                totalInputVolume += inputEvent.TransformedVolume; // Use the TransformedVolume from TransformEvents
+                            }
                         }
                     }
                 }
+                history.InputVolume = totalInputVolume;
+            }
+            else
+            {
+                // If no inputs, the input volume should be the same as the transformed volume
+                history.InputVolume = history.TransformedVolume ?? 0;
             }
 
-            // Calculate total emissions for this certificate
-            history.TotalEmissions = history.Inputs.Sum(input => input.TotalEmissions) + (history.TransformedVolume ?? 0m) * history.EmissionFactor;
-
+            history.TotalEmissions = (history.InputVolume ?? 0) * emissionFactor;
             return history;
         }
 
+
+
+
         private decimal CalculateTotalEmissions(CertificateHistory certificateHistory)
         {
-            if (certificateHistory.Inputs.Count == 0)
+            var totalEmissions = certificateHistory.TotalEmissions ?? 0;
+
+            foreach (var input in certificateHistory.Inputs)
             {
-                return certificateHistory.TotalEmissions ?? 0;
+                totalEmissions += CalculateTotalEmissions(input);
             }
 
-            return certificateHistory.Inputs.Sum(input => CalculateTotalEmissions(input)) + (certificateHistory.TransformedVolume ?? 0) * (certificateHistory.EmissionFactor ?? 0);
+            return totalEmissions;
         }
     }
 
@@ -203,7 +162,6 @@ namespace EPCSystemAPI.Controllers
     {
         public decimal TotalEmissions { get; set; }
         public CertificateHistory Tracing { get; set; }
-        public List<CertificateHistory> Originals { get; set; } = new List<CertificateHistory>();
     }
 
     public class CertificateHistory
@@ -214,9 +172,10 @@ namespace EPCSystemAPI.Controllers
         public string DeviceName { get; set; }
         public string DeviceType { get; set; }
         public string DeviceLocation { get; set; }
-        public decimal? EmissionFactor { get; set; } // New field for Emission Factor
+        public decimal? EmissionFactor { get; set; }
         public decimal? TransformedVolume { get; set; }
-        public decimal? TotalEmissions { get; set; } // New field for Total Emissions
+        public decimal? InputVolume { get; set; }
+        public decimal? TotalEmissions { get; set; }
         public DateTime TransformationTimestamp { get; set; }
         public string Error { get; set; }
         public List<CertificateHistory> Inputs { get; set; } = new List<CertificateHistory>();
