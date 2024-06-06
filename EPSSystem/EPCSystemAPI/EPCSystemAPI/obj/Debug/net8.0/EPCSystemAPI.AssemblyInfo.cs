@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EPCSystemAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+309d277d489e6f8f1ea0f8d40cee99607769924c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8af5250d15abc4ce3cda8bdf79c21fe47f3981cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("EPCSystemAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EPCSystemAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

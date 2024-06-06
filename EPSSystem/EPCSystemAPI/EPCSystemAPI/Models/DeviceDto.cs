@@ -10,5 +10,6 @@ namespace EPCSystemAPI.models
         public string PowerType { get; set; }
         public string DeviceType { get; set; }
         public string Location { get; set; }
+        public decimal EmissionFactor { get; set; } 
     }
 }

@@ -29,7 +29,15 @@ namespace EPCSystemAPI.Controllers
             try
             {
                 var result = await GetCertificateHistory(certificateId);
-                return Ok(result);
+                var totalEmissions = CalculateTotalEmissions(result);
+
+                var response = new CertificateHistoryResponse
+                {
+                    TotalEmissions = totalEmissions,
+                    Tracing = result
+                };
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -45,7 +53,16 @@ namespace EPCSystemAPI.Controllers
             {
                 var backtrackResult = await GetCertificateHistory(certificateId);
                 var originalCertificates = ExtractOriginalCertificates(backtrackResult);
-                return Ok(originalCertificates);
+                var totalEmissions = originalCertificates.Sum(c => c.TotalEmissions ?? 0);
+
+                var response = new CertificateHistoryResponse
+                {
+                    TotalEmissions = totalEmissions,
+                    Tracing = backtrackResult,
+                    Originals = originalCertificates
+                };
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
@@ -85,6 +102,8 @@ namespace EPCSystemAPI.Controllers
                         DeviceName = history.DeviceName,
                         DeviceType = history.DeviceType,
                         DeviceLocation = history.DeviceLocation,
+                        EmissionFactor = history.EmissionFactor,
+                        TotalEmissions = history.TransformedVolume ?? 0 * history.EmissionFactor ?? 0,
                         TransformedVolume = history.TransformedVolume ?? 0,
                         TransformationTimestamp = history.TransformationTimestamp
                     };
@@ -104,7 +123,19 @@ namespace EPCSystemAPI.Controllers
             var certificate = await _context.Certificates
                 .Include(c => c.ElectricityProduction)
                 .ThenInclude(ep => ep.Device)
-                .FirstOrDefaultAsync(c => c.Id == certificateId);            
+                .FirstOrDefaultAsync(c => c.Id == certificateId);
+
+            if (certificate == null)
+            {
+                _logger.LogError($"Certificate with ID {certificateId} not found.");
+                return new CertificateHistory
+                {
+                    CertificateId = certificateId,
+                    Error = "Certificate not found"
+                };
+            }
+
+            var emissionFactor = certificate.ElectricityProduction?.Device?.EmissionFactor ?? 0;
 
             var history = new CertificateHistory
             {
@@ -114,6 +145,8 @@ namespace EPCSystemAPI.Controllers
                 DeviceName = certificate.ElectricityProduction?.Device?.DeviceName,
                 DeviceType = certificate.ElectricityProduction?.Device?.DeviceType,
                 DeviceLocation = certificate.ElectricityProduction?.Device?.Location,
+                EmissionFactor = emissionFactor,
+                TotalEmissions = (certificate.CurrentVolume) * emissionFactor,
                 TransformationTimestamp = certificate.CreatedAt // Assuming the certificate's creation time as the transformation time
             };
 
@@ -142,14 +175,35 @@ namespace EPCSystemAPI.Controllers
                         if (inputHistory != null)
                         {
                             inputHistory.TransformedVolume = inputEvent.TransformedVolume;
+                            inputHistory.TotalEmissions = inputHistory.TransformedVolume * inputHistory.EmissionFactor;
                             history.Inputs.Add(inputHistory);
                         }
                     }
                 }
             }
 
+            // Calculate total emissions for this certificate
+            history.TotalEmissions = history.Inputs.Sum(input => input.TotalEmissions) + (history.TransformedVolume ?? 0m) * history.EmissionFactor;
+
             return history;
         }
+
+        private decimal CalculateTotalEmissions(CertificateHistory certificateHistory)
+        {
+            if (certificateHistory.Inputs.Count == 0)
+            {
+                return certificateHistory.TotalEmissions ?? 0;
+            }
+
+            return certificateHistory.Inputs.Sum(input => CalculateTotalEmissions(input)) + (certificateHistory.TransformedVolume ?? 0) * (certificateHistory.EmissionFactor ?? 0);
+        }
+    }
+
+    public class CertificateHistoryResponse
+    {
+        public decimal TotalEmissions { get; set; }
+        public CertificateHistory Tracing { get; set; }
+        public List<CertificateHistory> Originals { get; set; } = new List<CertificateHistory>();
     }
 
     public class CertificateHistory
@@ -160,8 +214,11 @@ namespace EPCSystemAPI.Controllers
         public string DeviceName { get; set; }
         public string DeviceType { get; set; }
         public string DeviceLocation { get; set; }
+        public decimal? EmissionFactor { get; set; } // New field for Emission Factor
         public decimal? TransformedVolume { get; set; }
+        public decimal? TotalEmissions { get; set; } // New field for Total Emissions
         public DateTime TransformationTimestamp { get; set; }
+        public string Error { get; set; }
         public List<CertificateHistory> Inputs { get; set; } = new List<CertificateHistory>();
     }
 }

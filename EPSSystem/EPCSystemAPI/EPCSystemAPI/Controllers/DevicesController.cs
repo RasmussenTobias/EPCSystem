@@ -19,7 +19,7 @@ namespace EPCSystemAPI.Controllers
         {
             _context = context;
         }
-        
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Device>>> GetDevices()
         {
@@ -61,7 +61,8 @@ namespace EPCSystemAPI.Controllers
                 PowerType = deviceInput.PowerType,
                 DeviceType = deviceInput.DeviceType,
                 Location = deviceInput.Location,
-                CreatedAt = DateTime.UtcNow 
+                EmissionFactor = deviceInput.EmissionFactor, 
+                CreatedAt = DateTime.UtcNow
             };
 
             _context.Devices.Add(device);
