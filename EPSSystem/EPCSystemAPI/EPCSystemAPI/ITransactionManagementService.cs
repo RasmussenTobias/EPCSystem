@@ -1,6 +1,7 @@
 ﻿using EPCSystemAPI.models;
+using System.Threading.Tasks;
 
-namespace EPCSystemAPI
+namespace EPCSystemAPI.Services
 {
     public interface ITransactionManagementService
     {
@@ -8,4 +9,4 @@ namespace EPCSystemAPI
         Task<TransactionResponse> CommitTransaction(TradeRequestDto tradeRequest);
         Task<TransactionResponse> AbortTransaction(TradeRequestDto tradeRequest);
     }
-    }
+}

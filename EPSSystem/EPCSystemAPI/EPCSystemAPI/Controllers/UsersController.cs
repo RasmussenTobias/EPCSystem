@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EPCSystemAPI.Models;
-using EPCSystemAPI.models;
 using Microsoft.EntityFrameworkCore;
+using EPCSystemAPI.models;
 
 namespace EPCSystemAPI.Controllers
 {
@@ -12,9 +11,9 @@ namespace EPCSystemAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly ILogger<TransferController> _logger;
+        private readonly ILogger<UsersController> _logger;
 
-        public UsersController(ApplicationDbContext context, ILogger<TransferController> logger)
+        public UsersController(ApplicationDbContext context, ILogger<UsersController> logger)
         {
             _context = context;
             _logger = logger;
@@ -36,6 +35,20 @@ namespace EPCSystemAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<UserDto>> PostUser(UserDto userDto)
         {
+            // Check if the username is empty
+            if (string.IsNullOrWhiteSpace(userDto.Username))
+            {
+                return BadRequest("Username cannot be empty.");
+            }
+
+            // Check if the username already exists
+            var existingUser = await _context.Users
+                                             .FirstOrDefaultAsync(u => u.Username == userDto.Username);
+            if (existingUser != null)
+            {
+                return Conflict("Username already exists.");
+            }
+
             var user = new User
             {
                 Username = userDto.Username
@@ -89,6 +102,5 @@ namespace EPCSystemAPI.Controllers
                 return StatusCode(500, $"An error occurred while retrieving user balance: {ex.InnerException?.Message ?? ex.Message}");
             }
         }
-
     }
 }

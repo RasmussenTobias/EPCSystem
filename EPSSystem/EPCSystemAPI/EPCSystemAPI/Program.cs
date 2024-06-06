@@ -24,6 +24,9 @@ builder.Services.AddCors(options =>
 // Register the ElectricityProductionService
 builder.Services.AddScoped<ElectricityProductionService>();
 
+// Register the ITransactionManagementService
+builder.Services.AddScoped<ITransactionManagementService, TransactionManagementService>();
+
 // Register controllers
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

@@ -4,24 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EPCSystemAPI.models
 {
+    public enum TradeResponseType
+    {
+        Commit,
+        Abort
+    }
     public class TradeRequestDto
     {
         public int FromUserId { get; set; }
         public int ToUserId { get; set; }
-        public List<OfferedCertificateDto> OfferedCertificates { get; set; }
-        public List<RequestedCertificateDto> RequestedCertificates { get; set; }
+        public List<CertificateTransferDto> OfferedCertificates { get; set; }
+        public TradeResponseType TradeResponseType { get; set; }
     }
-
-    public class OfferedCertificateDto
-    {
-        public int Amount { get; set; }
-        public int ElectricityProductionId { get; set; } // Added property for currency
-    }
-
-    public class RequestedCertificateDto
-    {
-        public int Amount { get; set; }
-        public int ElectricityProductionId { get; set; } // Added property for currency
-    }
-
 }

@@ -3,9 +3,10 @@ using System.Threading.Tasks;
 using EPCSystemAPI.Models;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Linq;
 using EPCSystemAPI.models;
+using EPCSystemAPI.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace EPCSystemAPI.Controllers
 {
@@ -25,22 +26,54 @@ namespace EPCSystemAPI.Controllers
         }
 
         [HttpPost("initiateTrade")]
-        public async Task<IActionResult> InitiateTrade([FromBody] TradeRequestDto tradeRequest)
+        public async Task<ActionResult<TradeResponse>> InitiateTrade([FromBody] TradeRequestDto tradeRequest)
         {
+            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
+                // Validate ToUserId
+                var toUser = await _context.Users.FindAsync(tradeRequest.ToUserId);
+                if (toUser == null)
+                {
+                    return BadRequest(new TradeResponse
+                    {
+                        IsSuccess = false,
+                        Message = "ToUserId is invalid."
+                    });
+                }
+
                 // Validation phase
                 var validation = await ValidateTradeRequest(tradeRequest);
                 if (!validation.IsValid)
                 {
-                    return BadRequest(validation.ErrorMessage);
+                    return BadRequest(new TradeResponse
+                    {
+                        IsSuccess = false,
+                        Message = validation.ErrorMessage
+                    });
                 }
 
                 // Pre-commit phase
                 var preCommitResponse = await _tmsService.SendPreCommit(tradeRequest);
                 if (!preCommitResponse.IsSuccess)
                 {
-                    return BadRequest(preCommitResponse.Message);
+                    return BadRequest(new TradeResponse
+                    {
+                        IsSuccess = false,
+                        Message = preCommitResponse.Message
+                    });
+                }
+
+                // Determine the trade response based on TradeResponseType
+                if (tradeRequest.TradeResponseType == TradeResponseType.Abort)
+                {
+                    // Abort the transaction
+                    await _tmsService.AbortTransaction(tradeRequest);
+                    return BadRequest(new TradeResponse
+                    {
+                        IsSuccess = false,
+                        Message = "Trade aborted as requested."
+                    });
                 }
 
                 // Commit phase
@@ -49,16 +82,98 @@ namespace EPCSystemAPI.Controllers
                 {
                     // Abort if commit fails
                     await _tmsService.AbortTransaction(tradeRequest);
-                    return BadRequest(commitResponse.Message);
+                    return BadRequest(new TradeResponse
+                    {
+                        IsSuccess = false,
+                        Message = commitResponse.Message
+                    });
                 }
 
                 // If commit successful, execute the transfer
-                return RedirectToAction("ExecuteTransfer", "Transfer", tradeRequest);
+                var updatedCertificates = new List<CertificateDto>();
+                var totalVolume = 0m;
+                int currency = 0;
+                foreach (var offeredCertificate in tradeRequest.OfferedCertificates)
+                {
+                    // Find the user's certificate
+                    var userCertificate = await _context.Certificates
+                        .FirstOrDefaultAsync(c => c.Id == offeredCertificate.CertificateId && c.UserId == tradeRequest.FromUserId);
+
+                    if (userCertificate == null || userCertificate.CurrentVolume < offeredCertificate.Amount)
+                    {
+                        await transaction.RollbackAsync();
+                        return BadRequest(new TradeResponse
+                        {
+                            IsSuccess = false,
+                            Message = "Insufficient certificate volume for the trade."
+                        });
+                    }
+
+                    // Subtract the amount from the FromUser's certificate
+                    userCertificate.CurrentVolume -= offeredCertificate.Amount;
+                    totalVolume += offeredCertificate.Amount;
+                    currency = userCertificate.ElectricityProductionId; // Set currency to ElectricityProductionId
+
+                    // Create a new certificate for the ToUser
+                    var newCertificate = new Certificate
+                    {
+                        UserId = tradeRequest.ToUserId,
+                        ElectricityProductionId = userCertificate.ElectricityProductionId,
+                        CreatedAt = DateTime.Now,
+                        Volume = offeredCertificate.Amount,
+                        CurrentVolume = offeredCertificate.Amount
+                    };
+                    _context.Certificates.Add(newCertificate);
+
+                    // Add to the response list
+                    updatedCertificates.Add(new CertificateDto
+                    {
+                        UserId = tradeRequest.ToUserId,
+                        ElectricityProductionId = userCertificate.ElectricityProductionId,
+                        Amount = offeredCertificate.Amount
+                    });
+                }
+
+                // Add a trade event
+                var tradeEvent = new TradeEvent
+                {
+                    FromUserId = tradeRequest.FromUserId,
+                    ToUserId = tradeRequest.ToUserId,
+                    Volume = totalVolume,
+                    Currency = currency
+                };
+                _context.TradeEvents.Add(tradeEvent);
+                await _context.SaveChangesAsync();
+
+                // Add an event
+                var eventEntry = new Event
+                {
+                    Event_Type = "Trade",
+                    Reference_Id = tradeEvent.Id,
+                    User_Id = tradeRequest.FromUserId,
+                    Timestamp = DateTime.Now
+                };
+                _context.Events.Add(eventEntry);
+
+                // Save changes and commit transaction
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return Ok(new TradeResponse
+                {
+                    IsSuccess = true,
+                    Message = "Trade committed successfully."
+                });
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 _logger.LogError(ex, "Error initiating trade: {Message}", ex.Message);
-                return StatusCode(500, "Internal server error while initiating trade.");
+                return StatusCode(500, new TradeResponse
+                {
+                    IsSuccess = false,
+                    Message = "Internal server error while initiating trade."
+                });
             }
         }
 
@@ -66,15 +181,15 @@ namespace EPCSystemAPI.Controllers
         {
             foreach (var offeredCertificate in tradeRequest.OfferedCertificates)
             {
-                var userBalance = await _context.UserBalanceView
-                    .FirstOrDefaultAsync(ub => ub.UserId == tradeRequest.FromUserId && ub.ElectricityProductionId == offeredCertificate.ElectricityProductionId);
+                var userCertificate = await _context.Certificates
+                    .FirstOrDefaultAsync(c => c.Id == offeredCertificate.CertificateId && c.UserId == tradeRequest.FromUserId);
 
-                if (userBalance == null || userBalance.Balance < offeredCertificate.Amount)
+                if (userCertificate == null || userCertificate.CurrentVolume < offeredCertificate.Amount)
                 {
                     return new ValidationResult
                     {
                         IsValid = false,
-                        ErrorMessage = $"Insufficient balance for ElectricityProductionId {offeredCertificate.ElectricityProductionId}."
+                        ErrorMessage = $"Insufficient certificate volume for CertificateId {offeredCertificate.CertificateId}."
                     };
                 }
             }

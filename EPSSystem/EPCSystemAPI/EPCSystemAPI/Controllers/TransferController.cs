@@ -25,6 +25,13 @@ namespace EPCSystemAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> ExecuteTransfer([FromBody] TradeCertificateDto tradeDto)
         {
+            // Validate ToUserId
+            var toUser = await _context.Users.FindAsync(tradeDto.ToUserId);
+            if (toUser == null)
+            {
+                return BadRequest($"ToUserId {tradeDto.ToUserId} is invalid.");
+            }
+
             // Find the maximum bundle ID in the TransferEvents table
             var maxBundleId = await _context.TransferEvents
                 .MaxAsync(te => (int?)te.BundleId); // Use nullable int to handle null values

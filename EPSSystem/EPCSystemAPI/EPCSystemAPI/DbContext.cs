@@ -18,6 +18,7 @@ namespace EPCSystemAPI
         public DbSet<Event> Events { get; set; }
         public DbSet<TransferEvent> TransferEvents { get; set; }
         public DbSet<TransformEvent> TransformEvents { get; set; }
+        public DbSet<TradeEvent> TradeEvents { get; set; }
         public DbSet<ProduceEvent> ProduceEvents { get; set; }
         public DbSet<PendingTrade> PendingTrades { get; set; }
         public DbSet<UserBalanceView> UserBalanceView { get; set; }

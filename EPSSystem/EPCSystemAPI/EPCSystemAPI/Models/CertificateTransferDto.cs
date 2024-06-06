@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EPCSystemAPI.models
+﻿namespace EPCSystemAPI.models
 {
     public class CertificateTransferDto
     {
         public int CertificateId { get; set; }
-        public decimal Amount { get; set; } 
+        public int Amount { get; set; }
     }
 }
