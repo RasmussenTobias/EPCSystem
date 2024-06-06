@@ -12,19 +12,19 @@ namespace EPCSystemAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BacktrackController : ControllerBase
+    public class TracingController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly ILogger<BacktrackController> _logger;
+        private readonly ILogger<TracingController> _logger;
 
-        public BacktrackController(ApplicationDbContext context, ILogger<BacktrackController> logger)
+        public TracingController(ApplicationDbContext context, ILogger<TracingController> logger)
         {
             _context = context;
             _logger = logger;
         }
 
-        [HttpGet("backtrack")]
-        public async Task<IActionResult> BacktrackCertificates([FromQuery] int certificateId)
+        [HttpGet("trace")]
+        public async Task<IActionResult> TraceCertificates([FromQuery] int certificateId)
         {
             try
             {
@@ -41,8 +41,8 @@ namespace EPCSystemAPI.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error during backtracking: {Message}", ex.Message);
-                return StatusCode(500, $"Internal server error during backtracking: {ex.Message}");
+                _logger.LogError(ex, "Error during tracing: {Message}", ex.Message);
+                return StatusCode(500, $"Internal server error during tracing: {ex.Message}");
             }
         }
 
