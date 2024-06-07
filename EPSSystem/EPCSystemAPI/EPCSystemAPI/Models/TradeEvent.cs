@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EPCSystemAPI.Models
+namespace EPCSystemAPI.models
 {
     public class TradeEvent
     {

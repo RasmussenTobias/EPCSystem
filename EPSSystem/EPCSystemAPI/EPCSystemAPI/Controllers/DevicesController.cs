@@ -19,13 +19,14 @@ namespace EPCSystemAPI.Controllers
         {
             _context = context;
         }
-
+        //Get Devices for the Post device
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Device>>> GetDevices()
         {
             return await _context.Devices.ToListAsync();
         }
 
+        //Get devices by username
         [HttpGet("{username}")]
         public async Task<ActionResult<IEnumerable<DeviceResponseDto>>> GetDevicesByUsername(string username)
         {
@@ -43,6 +44,7 @@ namespace EPCSystemAPI.Controllers
                 })
                 .ToListAsync();
 
+            //Errormessage if user does not have any devices
             if (devices == null || devices.Count == 0)
             {
                 return NotFound("No devices found for the specified username");
@@ -51,9 +53,11 @@ namespace EPCSystemAPI.Controllers
             return devices;
         }
 
+        //Post device endpoint
         [HttpPost]
         public async Task<ActionResult<Device>> PostDevice(DeviceDto deviceInput)
         {
+            //Create device from model
             var device = new Device
             {
                 UserId = deviceInput.UserId,
@@ -68,6 +72,7 @@ namespace EPCSystemAPI.Controllers
             _context.Devices.Add(device);
             await _context.SaveChangesAsync();
 
+            //Respond to client
             return CreatedAtAction(nameof(GetDevices), new { id = device.Id }, device);
         }
     }

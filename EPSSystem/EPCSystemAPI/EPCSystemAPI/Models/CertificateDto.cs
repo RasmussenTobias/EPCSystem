@@ -1,4 +1,4 @@
-﻿namespace EPCSystemAPI.Models
+﻿namespace EPCSystemAPI.models
 {
     public class CertificateDto
     {

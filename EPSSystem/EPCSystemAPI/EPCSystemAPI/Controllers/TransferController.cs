@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using EPCSystemAPI.Models;  // Ensure correct namespace
 using Microsoft.Extensions.Logging;
 using EPCSystemAPI.models;
 
@@ -13,9 +12,11 @@ namespace EPCSystemAPI.Controllers
     [Route("[controller]")]
     public class TransferController : ControllerBase
     {
+        // Dependency injections for dbcontext
         private readonly ApplicationDbContext _context;
         private readonly ILogger<TransferController> _logger;
-
+        
+        // Dependency constructor
         public TransferController(ApplicationDbContext context, ILogger<TransferController> logger)
         {
             _context = context;
@@ -41,13 +42,15 @@ namespace EPCSystemAPI.Controllers
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
-                {
+                {                    
                     foreach (var certTransfer in tradeDto.Transfers)
                     {
+                        //Get certificates and production data
                         var originalCertificate = await _context.Certificates
                             .Include(c => c.ElectricityProduction)
                             .FirstOrDefaultAsync(c => c.Id == certTransfer.CertificateId);
 
+                        //Checks - insuffiecient certificate id, user do not own id, not enough volume on certificate
                         if (originalCertificate == null)
                         {
                             return NotFound($"Certificate with ID {certTransfer.CertificateId} not found");
@@ -63,7 +66,7 @@ namespace EPCSystemAPI.Controllers
                             return BadRequest($"Insufficient certificate volume for transfer. Available: {originalCertificate.CurrentVolume}, Attempted to transfer: {certTransfer.Amount}");
                         }
 
-                        // Deduct the volume from the original certificate
+                        //Subtract the volume from the original certificate
                         originalCertificate.CurrentVolume -= certTransfer.Amount;
                         _context.Certificates.Update(originalCertificate);
 
@@ -78,7 +81,7 @@ namespace EPCSystemAPI.Controllers
                         };
                         _context.Certificates.Add(receiverCertificate);
 
-                        // Create an event record for the transfer
+                        //Create event 
                         var transferEvent = new Event
                         {
                             Event_Type = "TRANSFER",
@@ -86,11 +89,9 @@ namespace EPCSystemAPI.Controllers
                             Timestamp = DateTime.Now
                         };
                         _context.Events.Add(transferEvent);
-
-                        // Commit changes to get the auto-generated ID of the event
                         await _context.SaveChangesAsync();
 
-                        // Now create the TransferEvent using the bundleId
+                        //Create transfer event
                         var transferEventEntry = new TransferEvent
                         {
                             FromUserId = tradeDto.FromUserId,
@@ -101,19 +102,18 @@ namespace EPCSystemAPI.Controllers
                         };
                         _context.TransferEvents.Add(transferEventEntry);
 
-                        // Commit changes to get the auto-generated ID of the TransferEvent
+                        // Commit changes to get the ID of the TransferEvent
                         await _context.SaveChangesAsync();
 
                         // Set the Reference_Id of the Event to be the ID of the TransferEvent
                         transferEvent.Reference_Id = transferEventEntry.Id;
-
-                        // Save changes again to update the Reference_Id in the Event entity
                         await _context.SaveChangesAsync();
                     }
 
                     await transaction.CommitAsync();
                     return Ok("Certificates traded successfully");
                 }
+                //If error, rollback
                 catch (Exception ex)
                 {
                     await transaction.RollbackAsync();

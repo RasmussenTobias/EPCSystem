@@ -1,27 +1,29 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EPCSystemAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using EPCSystemAPI.models;
 
 namespace EPCSystemAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")]  
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        // Dependency injections for dbcontext
+        private readonly ApplicationDbContext _context;  
         private readonly ILogger<UsersController> _logger;
 
+        // Dependency constructor
         public UsersController(ApplicationDbContext context, ILogger<UsersController> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+        //GET endpoint to get all users from the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
-        {
+        {            
             var users = await _context.Users.ToListAsync();
             var userDtos = users.Select(user => new UserDto
             {
@@ -29,26 +31,26 @@ namespace EPCSystemAPI.Controllers
                 Username = user.Username
             }).ToList();
 
-            return Ok(userDtos);
+            return Ok(userDtos);  
         }
 
+        //POST endpoint to create a new user
         [HttpPost]
         public async Task<ActionResult<UserDto>> PostUser(UserDto userDto)
         {
-            // Check if the username is empty
+            //Username checks
             if (string.IsNullOrWhiteSpace(userDto.Username))
             {
                 return BadRequest("Username cannot be empty.");
             }
-
-            // Check if the username already exists
             var existingUser = await _context.Users
                                              .FirstOrDefaultAsync(u => u.Username == userDto.Username);
             if (existingUser != null)
             {
-                return Conflict("Username already exists.");
+                return Conflict("Username already exists."); 
             }
 
+            // Create a new user
             var user = new User
             {
                 Username = userDto.Username
@@ -57,14 +59,16 @@ namespace EPCSystemAPI.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
+            //Respond to client
             return CreatedAtAction(nameof(PostUser), new { id = user.Id }, userDto);
         }
 
+        //GET endpoint to retrieve balance for userid
         [HttpGet("UserBalance/{userId}")]
         public async Task<IActionResult> GetUserBalance(int userId)
         {
             try
-            {
+            {                
                 var userBalances = await _context.UserBalanceView
                     .Where(ub => ub.UserId == userId)
                     .Join(
@@ -89,15 +93,17 @@ namespace EPCSystemAPI.Controllers
                     )
                     .ToListAsync();
 
+                //Check userbalance
                 if (userBalances == null || !userBalances.Any())
                 {
                     return NotFound($"User balance not found for user with ID {userId}");
                 }
 
-                return Ok(userBalances);
+                return Ok(userBalances);  
             }
+            //Return error
             catch (Exception ex)
-            {
+            {                
                 _logger.LogError(ex, "An error occurred while retrieving user balance: {Message}", ex.InnerException?.Message ?? ex.Message);
                 return StatusCode(500, $"An error occurred while retrieving user balance: {ex.InnerException?.Message ?? ex.Message}");
             }

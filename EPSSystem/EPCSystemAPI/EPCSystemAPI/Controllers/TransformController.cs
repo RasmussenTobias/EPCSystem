@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using EPCSystemAPI.Models;
 using Microsoft.Extensions.Logging;
 using EPCSystemAPI.models;
 using EPCSystemAPI.Services;
@@ -14,10 +13,12 @@ namespace EPCSystemAPI.Controllers
     [Route("[controller]")]
     public class TransformController : ControllerBase
     {
+        // Dependency injections for dbcontext
         private readonly ApplicationDbContext _context;
         private readonly ILogger<TransformController> _logger;
         private readonly ElectricityProductionService _productionService;
 
+        // Dependency constructor
         public TransformController(ApplicationDbContext context, ILogger<TransformController> logger, ElectricityProductionService productionService)
         {
             _context = context;
@@ -25,6 +26,7 @@ namespace EPCSystemAPI.Controllers
             _productionService = productionService;
         }
 
+        //Post endpoint for transformation of certificate
         [HttpPost("transform")]
         public async Task<IActionResult> TransformCertificate([FromBody] TransformRequestDto transformRequest)
         {

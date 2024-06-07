@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using EPCSystemAPI.Models;
 using Microsoft.Extensions.Logging;
 using System;
 using EPCSystemAPI.models;
@@ -14,10 +13,12 @@ namespace EPCSystemAPI.Controllers
     [Route("[controller]")]
     public class TradeController : ControllerBase
     {
+        // Dependency injections for dbcontext
         private readonly ILogger<TradeController> _logger;
         private readonly ITransactionManagementService _tmsService;
         private readonly ApplicationDbContext _context;
 
+        // Dependency constructor
         public TradeController(ILogger<TradeController> logger, ITransactionManagementService tmsService, ApplicationDbContext context)
         {
             _logger = logger;
@@ -25,6 +26,7 @@ namespace EPCSystemAPI.Controllers
             _context = context;
         }
 
+        //Post endpoint to initiate a trade
         [HttpPost("initiateTrade")]
         public async Task<ActionResult<TradeResponse>> InitiateTrade([FromBody] TradeRequestDto tradeRequest)
         {
@@ -165,6 +167,7 @@ namespace EPCSystemAPI.Controllers
                     Message = "Trade committed successfully."
                 });
             }
+            //If error, rollback
             catch (Exception ex)
             {
                 await transaction.RollbackAsync();
@@ -177,6 +180,7 @@ namespace EPCSystemAPI.Controllers
             }
         }
 
+        //Validate the traderequest
         private async Task<ValidationResult> ValidateTradeRequest(TradeRequestDto tradeRequest)
         {
             foreach (var offeredCertificate in tradeRequest.OfferedCertificates)

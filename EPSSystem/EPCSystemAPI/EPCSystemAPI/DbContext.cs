@@ -1,5 +1,4 @@
 ﻿using EPCSystemAPI.models;
-using EPCSystemAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EPCSystemAPI
@@ -11,6 +10,7 @@ namespace EPCSystemAPI
         {
         }
 
+        //Setting the tables
         public DbSet<User> Users { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<ElectricityProduction> Electricity_Production { get; set; }
@@ -25,6 +25,7 @@ namespace EPCSystemAPI
         public DbSet<UserEventView> UserEventViews { get; set; }
 
 
+        //Relationships for the database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -61,9 +62,9 @@ namespace EPCSystemAPI
 
             modelBuilder.Entity<Certificate>()
                 .HasOne<ElectricityProduction>(c => c.ElectricityProduction)
-                .WithMany()  // or specify the collection if there is one
+                .WithMany()  
                 .HasForeignKey(c => c.ElectricityProductionId)
-                .OnDelete(DeleteBehavior.Restrict);  // Change to Restrict to avoid cascading delete
+                .OnDelete(DeleteBehavior.Restrict);  
 
             modelBuilder.Entity<Certificate>()
                 .HasOne(c => c.ParentCertificate)
