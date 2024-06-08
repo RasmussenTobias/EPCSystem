@@ -71,12 +71,11 @@ namespace EPCSystemAPI.Controllers
         // Recursive method to build a history trace for the given certificate
         private async Task<CertificateHistory> BuildCertificateHistory(Certificate certificate, HashSet<(int, int)> processedCertificates)
         {
-            // Prepares the history object
             var emissionFactor = certificate.ElectricityProduction?.Device?.EmissionFactor ?? 0;
             var history = new CertificateHistory
             {
                 CertificateId = certificate.Id,
-                DeviceId = certificate.ElectricityProduction?.DeviceId,
+                DeviceId = certificate.ElectricityProduction?.DeviceId ?? -1, // Handle nullable DeviceId
                 PowerType = certificate.ElectricityProduction?.Device?.PowerType,
                 DeviceName = certificate.ElectricityProduction?.Device?.DeviceName,
                 DeviceType = certificate.ElectricityProduction?.Device?.DeviceType,
@@ -86,36 +85,35 @@ namespace EPCSystemAPI.Controllers
                 TransformationTimestamp = certificate.CreatedAt
             };
 
-            processedCertificates.Add((certificate.Id, certificate.ElectricityProduction?.DeviceId ?? 0));
+            processedCertificates.Add((certificate.Id, certificate.ElectricityProduction?.DeviceId ?? -1));
 
-            // Explore further the history through transform events linked to this certificate
             var transformEventsAsNew = await _context.TransformEvents
-                .Where(te => te.NewCertificateId == certificate.Id)
+                .Where(te => te.NewCertificateId == certificate.Id && te.UserId != 0)
                 .OrderBy(te => te.TransformationTimestamp)
                 .ToListAsync();
 
-            if (transformEventsAsNew.Any())
+            decimal totalInputVolume = 0;
+            foreach (var transformEvent in transformEventsAsNew)
             {
-                decimal totalInputVolume = 0;
-                foreach (var transformEvent in transformEventsAsNew)
+                var inputs = await _context.TransformEvents
+                    .Where(te => te.BundleId == transformEvent.BundleId && te.UserId != 0)
+                    .ToListAsync();
+
+                foreach (var inputEvent in inputs)
                 {
-                    var inputs = await _context.TransformEvents
-                        .Where(te => te.BundleId == transformEvent.BundleId)
-                        .ToListAsync();
-
-                    foreach (var inputEvent in inputs)
+                    var key = (inputEvent.RootCertificateId ?? -1, inputEvent.BundleId.Value);
+                    if (!processedCertificates.Contains(key))
                     {
-                        var key = (inputEvent.RootCertificateId, inputEvent.BundleId.Value);
-                        if (!processedCertificates.Contains(key))
-                        {
-                            processedCertificates.Add(key);
-                            var inputCertificate = await _context.Certificates
-                                .Include(c => c.ElectricityProduction)
-                                .ThenInclude(ep => ep.Device)
-                                .FirstOrDefaultAsync(c => c.Id == inputEvent.RootCertificateId);
+                        processedCertificates.Add(key);
+                        var inputCertificate = await _context.Certificates
+                            .Include(c => c.ElectricityProduction)
+                            .ThenInclude(ep => ep.Device)
+                            .FirstOrDefaultAsync(c => c.Id == inputEvent.RootCertificateId);
 
+                        if (inputCertificate != null)
+                        {
                             var inputHistory = await BuildCertificateHistory(inputCertificate, processedCertificates);
-                            if (inputHistory != null)
+                            if (inputEvent.UserId != 0)
                             {
                                 inputHistory.TransformedVolume = inputEvent.TransformedVolume;
                                 if (inputHistory.Inputs.Count == 0)
@@ -134,16 +132,12 @@ namespace EPCSystemAPI.Controllers
                         }
                     }
                 }
-                history.InputVolume = totalInputVolume;
             }
-            else
-            {
-                history.InputVolume = history.TransformedVolume ?? 0;
-            }
-
+            history.InputVolume = totalInputVolume;
             history.TotalEmissions = (history.InputVolume ?? 0) * emissionFactor;
             return history;
         }
+
 
         // Calculates total emissions recursively for the given certificate and its inputs
         private decimal CalculateTotalEmissions(CertificateHistory certificateHistory)

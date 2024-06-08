@@ -9,11 +9,9 @@ namespace EPCSystemAPI.models
     {
         public int DeviceId { get; set; }
         public DateTime ProductionTime { get; set; }
-        public decimal AmountWh { get; set; }
         public List<TransformInputDto> Inputs { get; set; }
 
         public decimal Efficiency { get; set; }
-
     }
 
     public class TransformInputDto
