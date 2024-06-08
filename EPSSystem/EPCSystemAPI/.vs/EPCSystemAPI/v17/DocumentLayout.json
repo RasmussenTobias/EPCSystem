@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\transformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\transformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\transactionmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\transactionmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\itransactionmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\itransactionmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\transfercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,14 +47,6 @@
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\tradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\tradeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\tradeevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,16 +55,8 @@
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\certificatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\certificatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,41 +122,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "DbContext.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\DbContext.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\DbContext.cs",
               "RelativeToolTip": "EPCSystemAPI\\DbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T20:41:51.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TradeEvent.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeEvent.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TradeEvent.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeEvent.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Models\\TradeEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T20:29:51.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TradeController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TradeController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TradeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T20:28:54.701Z",
               "EditorCaption": ""
             },
             {
@@ -155,20 +141,33 @@
               "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TracingController.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TracingController.cs",
               "RelativeToolTip": "EPCSystemAPI\\Controllers\\TracingController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAhAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAIwJsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T20:22:09.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAIwGUAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:29:20.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ElectricityProductionController.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
               "RelativeToolTip": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAEAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowDIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T20:05:39.354Z",
               "EditorCaption": ""
@@ -176,14 +175,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TransferController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransferController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TransferController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransferController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TransferController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAfAAAA",
+              "Title": "DevicesController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\DevicesController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Controllers\\DevicesController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwEoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T20:28:58.571Z",
+              "WhenOpened": "2024-06-07T20:08:08.354Z",
               "EditorCaption": ""
             },
             {
@@ -201,7 +200,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TransactionManagementService.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\TransactionManagementService.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\TransactionManagementService.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\TransactionManagementService.cs",
+              "RelativeToolTip": "EPCSystemAPI\\TransactionManagementService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:43:14.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Program.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:43:13.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ITransactionManagementService.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\ITransactionManagementService.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\ITransactionManagementService.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\ITransactionManagementService.cs",
+              "RelativeToolTip": "EPCSystemAPI\\ITransactionManagementService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:43:11.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TradeController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TradeController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TradeController.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TradeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:28:54.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TransferController.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransferController.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TransferController.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransferController.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TransferController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:28:58.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TradeEvent.cs",
+              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeEvent.cs",
+              "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TradeEvent.cs",
+              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TradeEvent.cs",
+              "RelativeToolTip": "EPCSystemAPI\\Models\\TradeEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T20:29:51.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "CertificateDto.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\CertificateDto.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\CertificateDto.cs",
@@ -214,20 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCUAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T20:29:20.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\UserDto.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\UserDto.cs",
@@ -240,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "CertificateHistoryModel.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\CertificateHistoryModel.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\CertificateHistoryModel.cs",
@@ -253,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "TransformEvent.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransformEvent.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransformEvent.cs",
@@ -266,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "CertificatesController.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\CertificatesController.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\CertificatesController.cs",
@@ -279,20 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DevicesController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T20:08:08.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "TransformRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransformRequestDto.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransformRequestDto.cs",
@@ -305,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "TransformLedger.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransformLedger.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransformLedger.cs",
@@ -318,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "TransferEvent.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferEvent.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferEvent.cs",
@@ -331,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "TransactionResponse.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransactionResponse.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransactionResponse.cs",
@@ -344,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "TransferLedger.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\TransferLedger.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\TransferLedger.cs",
@@ -357,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ElectricityProduction.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProduction.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ElectricityProduction.cs",
@@ -370,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "ElectricityProductionDto.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ElectricityProductionDto.cs",
@@ -383,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "ElectricityProductionService.cs",
               "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Models\\ElectricityProductionService.cs",
               "RelativeDocumentMoniker": "EPCSystemAPI\\Models\\ElectricityProductionService.cs",

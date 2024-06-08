@@ -13,8 +13,10 @@ namespace EPCSystemAPI.Controllers
     [Route("[controller]")]
     public class DevicesController : ControllerBase
     {
+        // Dependency injection for dbcontext
         private readonly ApplicationDbContext _context;
 
+        // Dependency constructor
         public DevicesController(ApplicationDbContext context)
         {
             _context = context;
