@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains the source code for my bachelor's project developed at DIKU, the Department of Computer Science at the University of Copenhagen. The project features a web API created using ASP.NET in C#, integrated with a relational database managed through SQL.
+This repository contains the source code for my bachelor's project developed at Department of Computer Science, University of Copenhagen (DIKU). The project features a web API created using ASP.NET in C#, integrated with a relational database managed through SQL.
 
 ## Technology Stack
 
