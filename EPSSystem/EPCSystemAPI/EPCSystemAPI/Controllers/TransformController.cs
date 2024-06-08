@@ -34,7 +34,6 @@ namespace EPCSystemAPI.Controllers
             {
                 try
                 {
-                    // Retrieve the device owner
                     var device = await _context.Devices.FindAsync(transformRequest.DeviceId);
                     if (device == null)
                     {
@@ -43,62 +42,63 @@ namespace EPCSystemAPI.Controllers
                     }
 
                     int deviceOwnerId = device.UserId;
-
-                    // Check if the device owner has the required input certificates and update their volumes
                     foreach (var input in transformRequest.Inputs)
                     {
-                        var certificate = await _context.Certificates
-                            .FirstOrDefaultAsync(c => c.Id == input.CertificateId && c.UserId == deviceOwnerId);
-
+                        var certificate = await _context.Certificates.FirstOrDefaultAsync(c => c.Id == input.CertificateId && c.UserId == deviceOwnerId);
                         if (certificate == null || certificate.CurrentVolume < input.Amount)
                         {
                             _logger.LogError($"Insufficient volume or certificate not found for certificate ID {input.CertificateId}.");
                             return BadRequest($"Insufficient volume or certificate not found for certificate ID {input.CertificateId}.");
                         }
 
-                        // Withdraw the amount from the certificate
                         certificate.CurrentVolume -= input.Amount;
                         _context.Certificates.Update(certificate);
                     }
 
                     await _context.SaveChangesAsync();
+                    var energyTransformed = transformRequest.AmountWh * (transformRequest.Efficiency / 100);
+                    var energyLost = transformRequest.AmountWh - energyTransformed;
 
-                    // Use the ElectricityProductionService to create a new production with a TRANSFORM event type
                     var productionRequest = new ElectricityProductionDto
                     {
                         ProductionTime = transformRequest.ProductionTime,
-                        AmountWh = transformRequest.AmountWh,
+                        AmountWh = energyTransformed,  // Only record the transformed energy
                         DeviceId = transformRequest.DeviceId
                     };
 
                     var result = await _productionService.CreateElectricityProduction(productionRequest, true, "TRANSFORM");
-                    var newProduction = result.Item1;
-                    var newCertificate = result.Item2;
-
-                    // Generate a new BundleId
                     var bundleId = await _context.TransformEvents.MaxAsync(te => (int?)te.BundleId) ?? 0;
                     bundleId++;
 
-                    // Create transform events for each input certificate
                     foreach (var input in transformRequest.Inputs)
                     {
                         var transformEvent = new TransformEvent
                         {
                             UserId = deviceOwnerId,
                             BundleId = bundleId,
-                            TransformedVolume = input.Amount,
+                            TransformedVolume = input.Amount * (transformRequest.Efficiency / 100),
                             TransformationTimestamp = DateTime.UtcNow,
                             RootCertificateId = await GetRootCertificateId(input.CertificateId),
-                            NewCertificateId = newCertificate.Id // Set NewCertificateId
+                            NewCertificateId = result.Item2.Id
                         };
                         await _context.TransformEvents.AddAsync(transformEvent);
+
+                        // Add a record for lost energy
+                        var lossEvent = new TransformEvent
+                        {
+                            UserId = 0,
+                            BundleId = bundleId,
+                            TransformedVolume = input.Amount * ((100 - transformRequest.Efficiency) / 100),
+                            TransformationTimestamp = DateTime.UtcNow,
+                            RootCertificateId = await GetRootCertificateId(input.CertificateId),
+                            NewCertificateId = 0  // No new certificate for the lost energy
+                        };
+                        await _context.TransformEvents.AddAsync(lossEvent);
                     }
 
                     await _context.SaveChangesAsync();
-
-                    // Commit the transaction
                     await transaction.CommitAsync();
-                    return Ok(new { ElectricityProduction = newProduction, Certificate = newCertificate });
+                    return Ok(new { ElectricityProduction = result.Item1, Certificate = result.Item2 });
                 }
                 catch (Exception ex)
                 {
@@ -109,6 +109,7 @@ namespace EPCSystemAPI.Controllers
                 }
             }
         }
+
 
         // Method to determine the root certificate ID
         private async Task<int> GetRootCertificateId(int certificateId)
