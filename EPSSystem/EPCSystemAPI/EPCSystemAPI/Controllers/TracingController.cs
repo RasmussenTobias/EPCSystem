@@ -20,20 +20,32 @@ namespace EPCSystemAPI.Controllers
         // Dependency constructor
         public TracingController(ApplicationDbContext context, ILogger<TracingController> logger)
         {
-            _context = context; 
-            _logger = logger; 
+            _context = context;
+            _logger = logger;
         }
 
         // GET endpoint to trace the history of a certificate by the certificates ID
         [HttpGet("trace")]
         public async Task<IActionResult> TraceCertificates([FromQuery] int certificateId)
         {
-            //Creates the model for the output
             try
             {
-                var history = await GetCertificateHistory(certificateId);
+                // Check if the certificate exists
+                var certificate = await _context.Certificates
+                    .Include(c => c.ElectricityProduction)
+                    .ThenInclude(ep => ep.Device)
+                    .FirstOrDefaultAsync(c => c.Id == certificateId);
+
+                if (certificate == null)
+                {
+                    _logger.LogWarning($"Certificate with ID {certificateId} not found.");
+                    return NotFound(new { error = $"Certificate with ID {certificateId} not found." });
+                }
+
+                // Creates the model for the output
+                var history = await GetCertificateHistory(certificate);
                 var totalEmissions = CalculateTotalEmissions(history);
-                
+
                 var response = new CertificateHistoryResponse
                 {
                     TotalEmissions = totalEmissions,
@@ -50,31 +62,15 @@ namespace EPCSystemAPI.Controllers
         }
 
         // Retrieves the history of a specific certificate
-        private async Task<CertificateHistory> GetCertificateHistory(int certificateId)
+        private async Task<CertificateHistory> GetCertificateHistory(Certificate certificate)
         {
-            var processedCertificates = new HashSet<(int, int)>(); 
-            return await BuildCertificateHistory(certificateId, processedCertificates);
+            var processedCertificates = new HashSet<(int, int)>();
+            return await BuildCertificateHistory(certificate, processedCertificates);
         }
 
-        // Recursive mehtod to build a history trace for the given certificate
-        private async Task<CertificateHistory> BuildCertificateHistory(int certificateId, HashSet<(int, int)> processedCertificates)
+        // Recursive method to build a history trace for the given certificate
+        private async Task<CertificateHistory> BuildCertificateHistory(Certificate certificate, HashSet<(int, int)> processedCertificates)
         {
-            // Fetch the certificate with their related devices
-            var certificate = await _context.Certificates
-                .Include(c => c.ElectricityProduction)
-                .ThenInclude(ep => ep.Device)
-                .FirstOrDefaultAsync(c => c.Id == certificateId);
-
-            if (certificate == null)
-            {
-                _logger.LogError($"Certificate with ID {certificateId} not found.");
-                return new CertificateHistory
-                {
-                    CertificateId = certificateId,
-                    Error = "Certificate not found"
-                };
-            }
-
             // Prepares the history object
             var emissionFactor = certificate.ElectricityProduction?.Device?.EmissionFactor ?? 0;
             var history = new CertificateHistory
@@ -90,11 +86,11 @@ namespace EPCSystemAPI.Controllers
                 TransformationTimestamp = certificate.CreatedAt
             };
 
-            processedCertificates.Add((certificateId, certificate.ElectricityProduction?.DeviceId ?? 0));
+            processedCertificates.Add((certificate.Id, certificate.ElectricityProduction?.DeviceId ?? 0));
 
             // Explore further the history through transform events linked to this certificate
             var transformEventsAsNew = await _context.TransformEvents
-                .Where(te => te.NewCertificateId == certificateId)
+                .Where(te => te.NewCertificateId == certificate.Id)
                 .OrderBy(te => te.TransformationTimestamp)
                 .ToListAsync();
 
@@ -113,7 +109,12 @@ namespace EPCSystemAPI.Controllers
                         if (!processedCertificates.Contains(key))
                         {
                             processedCertificates.Add(key);
-                            var inputHistory = await BuildCertificateHistory(inputEvent.RootCertificateId, processedCertificates);
+                            var inputCertificate = await _context.Certificates
+                                .Include(c => c.ElectricityProduction)
+                                .ThenInclude(ep => ep.Device)
+                                .FirstOrDefaultAsync(c => c.Id == inputEvent.RootCertificateId);
+
+                            var inputHistory = await BuildCertificateHistory(inputCertificate, processedCertificates);
                             if (inputHistory != null)
                             {
                                 inputHistory.TransformedVolume = inputEvent.TransformedVolume;
