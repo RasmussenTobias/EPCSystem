@@ -8,7 +8,7 @@ This repository contains the source code for my bachelor's project developed at 
 
 - **Framework**: ASP.NET
 - **Programming Language**: C#
-- **Database**: SQL
+- **Database**: T-SQL
 
 ## Setup Instructions
 
