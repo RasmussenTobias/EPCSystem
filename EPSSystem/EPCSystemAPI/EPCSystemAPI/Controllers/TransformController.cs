@@ -4,8 +4,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using EPCSystemAPI.models;
 using EPCSystemAPI.Services;
+using EPCSystemAPI.models;
 
 namespace EPCSystemAPI.Controllers
 {
@@ -13,12 +13,10 @@ namespace EPCSystemAPI.Controllers
     [Route("[controller]")]
     public class TransformController : ControllerBase
     {
-        // Dependency injections for dbcontext
         private readonly ApplicationDbContext _context;
         private readonly ILogger<TransformController> _logger;
         private readonly ElectricityProductionService _productionService;
 
-        // Dependency constructor
         public TransformController(ApplicationDbContext context, ILogger<TransformController> logger, ElectricityProductionService productionService)
         {
             _context = context;
@@ -26,7 +24,6 @@ namespace EPCSystemAPI.Controllers
             _productionService = productionService;
         }
 
-        //Post endpoint for transformation of certificate
         [HttpPost("transform")]
         public async Task<IActionResult> TransformCertificate([FromBody] TransformRequestDto transformRequest)
         {
@@ -43,6 +40,8 @@ namespace EPCSystemAPI.Controllers
 
                     int deviceOwnerId = device.UserId;
                     decimal totalInputVolume = 0;
+                    var bundleId = await _context.TransformEvents.MaxAsync(te => (int?)te.BundleId) ?? 0;
+                    bundleId++;
 
                     foreach (var input in transformRequest.Inputs)
                     {
@@ -56,11 +55,22 @@ namespace EPCSystemAPI.Controllers
                         certificate.CurrentVolume -= input.Amount;
                         _context.Certificates.Update(certificate);
                         totalInputVolume += input.Amount;
+
+                        // Create a transform event for each certificate
+                        var transformEvent = new TransformEvent
+                        {
+                            UserId = deviceOwnerId,
+                            BundleId = bundleId,
+                            TransformedVolume = input.Amount,
+                            TransformationTimestamp = DateTime.UtcNow,
+                            RootCertificateId = await GetRootCertificateId(input.CertificateId),
+                            NewCertificateId = null  // Assign the new certificate later
+                        };
+                        await _context.TransformEvents.AddAsync(transformEvent);
                     }
 
                     await _context.SaveChangesAsync();
 
-                    // Calculate transformed and lost energy based on efficiency
                     var energyTransformed = totalInputVolume * (transformRequest.Efficiency / 100);
                     var energyLost = totalInputVolume - energyTransformed;
 
@@ -72,32 +82,19 @@ namespace EPCSystemAPI.Controllers
                     };
 
                     var result = await _productionService.CreateElectricityProduction(productionRequest, true, "TRANSFORM");
-                    var bundleId = await _context.TransformEvents.MaxAsync(te => (int?)te.BundleId) ?? 0;
-                    bundleId++;
 
-                    foreach (var input in transformRequest.Inputs)
-                    {
-                        var transformEvent = new TransformEvent
-                        {
-                            UserId = deviceOwnerId,
-                            BundleId = bundleId,
-                            TransformedVolume = input.Amount * (transformRequest.Efficiency / 100),
-                            TransformationTimestamp = DateTime.UtcNow,
-                            RootCertificateId = await GetRootCertificateId(input.CertificateId),
-                            NewCertificateId = result.Item2.Id
-                        };
-                        await _context.TransformEvents.AddAsync(transformEvent);
-                    }
+                    // Update all transform events with the new certificate ID
+                    var transformEvents = await _context.TransformEvents.Where(te => te.BundleId == bundleId).ToListAsync();
+                    transformEvents.ForEach(te => te.NewCertificateId = result.Item2.Id);
+                    _context.UpdateRange(transformEvents);
 
-                    // Add a loss event with the same BundleId
+                    // Create a separate event for energy lost
                     var lossEvent = new TransformEvent
                     {
-                        UserId = 0,  // System user for lost energy
-                        BundleId = bundleId,  // Same bundle as the transformation
+                        UserId = 0,
+                        BundleId = bundleId,
                         TransformedVolume = energyLost,
-                        TransformationTimestamp = DateTime.UtcNow,
-                        RootCertificateId = null, 
-                        NewCertificateId = null  
+                        TransformationTimestamp = DateTime.UtcNow
                     };
                     await _context.TransformEvents.AddAsync(lossEvent);
 
@@ -115,9 +112,6 @@ namespace EPCSystemAPI.Controllers
             }
         }
 
-
-
-        // Method to determine the root certificate ID
         private async Task<int> GetRootCertificateId(int certificateId)
         {
             var certificate = await _context.Certificates
@@ -126,9 +120,7 @@ namespace EPCSystemAPI.Controllers
 
             while (certificate?.ParentCertificate != null)
             {
-                certificate = await _context.Certificates
-                    .Include(c => c.ParentCertificate)
-                    .FirstOrDefaultAsync(c => c.Id == certificate.ParentCertificateId);
+                certificate = certificate.ParentCertificate;
             }
 
             return certificate?.Id ?? certificateId;
