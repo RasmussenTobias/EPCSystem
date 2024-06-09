@@ -47,7 +47,7 @@ namespace EPCSystemAPI.Controllers
                     {
                         //Get certificates and production data
                         var originalCertificate = await _context.Certificates
-                            .Include(c => c.ElectricityProduction)
+                            .Include(c => c.EnergyProduction)
                             .FirstOrDefaultAsync(c => c.Id == certTransfer.CertificateId);
 
                         //Checks - insuffiecient certificate id, user do not own id, not enough volume on certificate
@@ -74,7 +74,7 @@ namespace EPCSystemAPI.Controllers
                         var receiverCertificate = new Certificate
                         {
                             UserId = tradeDto.ToUserId,
-                            ElectricityProductionId = originalCertificate.ElectricityProductionId,
+                            EnergyProductionId = originalCertificate.EnergyProductionId,
                             CreatedAt = DateTime.Now,
                             Volume = certTransfer.Amount,
                             CurrentVolume = certTransfer.Amount
@@ -98,7 +98,7 @@ namespace EPCSystemAPI.Controllers
                             ToUserId = tradeDto.ToUserId,
                             Volume = certTransfer.Amount,
                             BundleId = bundleId,
-                            Electricity_Production_Id = originalCertificate.ElectricityProductionId
+                            Energy_Production_Id = originalCertificate.EnergyProductionId
                         };
                         _context.TransferEvents.Add(transferEventEntry);
 

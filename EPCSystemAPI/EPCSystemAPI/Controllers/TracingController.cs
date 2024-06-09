@@ -32,7 +32,7 @@ namespace EPCSystemAPI.Controllers
             {
                 // Check if the certificate exists
                 var certificate = await _context.Certificates
-                    .Include(c => c.ElectricityProduction)
+                    .Include(c => c.EnergyProduction)
                     .ThenInclude(ep => ep.Device)
                     .FirstOrDefaultAsync(c => c.Id == certificateId);
 
@@ -71,21 +71,21 @@ namespace EPCSystemAPI.Controllers
         // Recursive method to build a history trace for the given certificate
         private async Task<CertificateHistory> BuildCertificateHistory(Certificate certificate, HashSet<(int, int)> processedCertificates)
         {
-            var emissionFactor = certificate.ElectricityProduction?.Device?.EmissionFactor ?? 0;
+            var emissionFactor = certificate.EnergyProduction?.Device?.EmissionFactor ?? 0;
             var history = new CertificateHistory
             {
                 CertificateId = certificate.Id,
-                DeviceId = certificate.ElectricityProduction?.DeviceId ?? -1, // Handle nullable DeviceId
-                PowerType = certificate.ElectricityProduction?.Device?.PowerType,
-                DeviceName = certificate.ElectricityProduction?.Device?.DeviceName,
-                DeviceType = certificate.ElectricityProduction?.Device?.DeviceType,
-                DeviceLocation = certificate.ElectricityProduction?.Device?.Location,
+                DeviceId = certificate.EnergyProduction?.DeviceId ?? -1, // Handle nullable DeviceId
+                PowerType = certificate.EnergyProduction?.Device?.PowerType,
+                DeviceName = certificate.EnergyProduction?.Device?.DeviceName,
+                DeviceType = certificate.EnergyProduction?.Device?.DeviceType,
+                DeviceLocation = certificate.EnergyProduction?.Device?.Location,
                 EmissionFactor = emissionFactor,
                 TransformedVolume = certificate.CurrentVolume,
                 TransformationTimestamp = certificate.CreatedAt
             };
 
-            processedCertificates.Add((certificate.Id, certificate.ElectricityProduction?.DeviceId ?? -1));
+            processedCertificates.Add((certificate.Id, certificate.EnergyProduction?.DeviceId ?? -1));
 
             var transformEventsAsNew = await _context.TransformEvents
                 .Where(te => te.NewCertificateId == certificate.Id && te.UserId != 0)
@@ -106,7 +106,7 @@ namespace EPCSystemAPI.Controllers
                     {
                         processedCertificates.Add(key);
                         var inputCertificate = await _context.Certificates
-                            .Include(c => c.ElectricityProduction)
+                            .Include(c => c.EnergyProduction)
                             .ThenInclude(ep => ep.Device)
                             .FirstOrDefaultAsync(c => c.Id == inputEvent.RootCertificateId);
 

@@ -11,7 +11,7 @@ namespace EPCSystemAPI.models
         public int UserId { get; set; }
         public DateTime Timestamp { get; set; }
         public decimal Value { get; set; }
-        public int? ElectricityProductionId { get; set; }
+        public int? EnergyProductionId { get; set; }
         public int? CertificateId { get; set; }
     }
 

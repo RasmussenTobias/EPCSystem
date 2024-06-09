@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("[controller]")]
-public class ElectricityProductionController : ControllerBase
+public class EnergyProductionController : ControllerBase
 {
     // Dependency injections for dbcontext
     private readonly ApplicationDbContext _context;
-    private readonly ElectricityProductionService _productionService;
-    private readonly ILogger<ElectricityProductionController> _logger;
+    private readonly EnergyProductionService _productionService;
+    private readonly ILogger<EnergyProductionController> _logger;
 
     // Dependency constructor
-    public ElectricityProductionController(ApplicationDbContext context, ElectricityProductionService productionService, ILogger<ElectricityProductionController> logger)
+    public EnergyProductionController(ApplicationDbContext context, EnergyProductionService productionService, ILogger<EnergyProductionController> logger)
     {
         _context = context; 
         _productionService = productionService; 
         _logger = logger;
     }
 
-    // POST endpoint for creating a new electricity production entry
+    // POST endpoint for creating a new energy production entry
     [HttpPost]
-    public async Task<IActionResult> CreateElectricityProduction([FromBody] ElectricityProductionDto model)
+    public async Task<IActionResult> CreateEnergyProduction([FromBody] EnergyProductionDto model)
     {
         // Validation check on the incoming data
         if (!ModelState.IsValid)
@@ -33,13 +33,13 @@ public class ElectricityProductionController : ControllerBase
 
         try
         {
-            // Call to service layer to the electricityproductionservice
-            var result = await _productionService.CreateElectricityProduction(model, false, "PRODUCTION");
-            var electricityProduction = result.Item1; 
+            // Call to service layer to the energyproductionservice
+            var result = await _productionService.CreateEnergyProduction(model, false, "PRODUCTION");
+            var energyProduction = result.Item1; 
             var certificate = result.Item2; 
 
             // Return success
-            return Ok(new { ElectricityProduction = electricityProduction, Certificate = certificate });
+            return Ok(new { EnergyProduction = energyProduction, Certificate = certificate });
         }
         //Return an error
         catch (Exception ex)

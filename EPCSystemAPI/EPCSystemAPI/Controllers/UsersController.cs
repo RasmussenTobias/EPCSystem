@@ -72,19 +72,19 @@ namespace EPCSystemAPI.Controllers
                 var userBalances = await _context.UserBalanceView
                     .Where(ub => ub.UserId == userId)
                     .Join(
-                        _context.Electricity_Production,
-                        ub => ub.ElectricityProductionId,
+                        _context.Energy_Production,
+                        ub => ub.EnergyProductionId,
                         ep => ep.Id,
-                        (ub, ep) => new { UserBalance = ub, ElectricityProduction = ep }
+                        (ub, ep) => new { UserBalance = ub, EnergyProduction = ep }
                     )
                     .Join(
                         _context.Devices,
-                        joined => joined.ElectricityProduction.DeviceId,
+                        joined => joined.EnergyProduction.DeviceId,
                         d => d.Id,
                         (joined, d) => new
                         {
                             UserId = joined.UserBalance.UserId,
-                            ElectricityProductionId = joined.UserBalance.ElectricityProductionId,
+                            EnergyProductionId = joined.UserBalance.EnergyProductionId,
                             Balance = joined.UserBalance.Balance,
                             PowerType = d.PowerType,
                             DeviceType = d.DeviceType,

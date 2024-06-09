@@ -5,7 +5,7 @@ namespace EPCSystemAPI.models
     public class UserBalanceView
     {
         public int UserId { get; set; }
-        public int ElectricityProductionId { get; set; }
+        public int EnergyProductionId { get; set; }
         public decimal Balance { get; set; }
     }
 }

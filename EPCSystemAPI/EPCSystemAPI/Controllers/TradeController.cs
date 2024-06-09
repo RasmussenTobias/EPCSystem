@@ -114,13 +114,13 @@ namespace EPCSystemAPI.Controllers
                     // Subtract the amount from the FromUser's certificate
                     userCertificate.CurrentVolume -= offeredCertificate.Amount;
                     totalVolume += offeredCertificate.Amount;
-                    currency = userCertificate.ElectricityProductionId; // Set currency to ElectricityProductionId
+                    currency = userCertificate.EnergyProductionId; // Set currency to EnergyProductionId
 
                     // Create a new certificate for the ToUser
                     var newCertificate = new Certificate
                     {
                         UserId = tradeRequest.ToUserId,
-                        ElectricityProductionId = userCertificate.ElectricityProductionId,
+                        EnergyProductionId = userCertificate.EnergyProductionId,
                         CreatedAt = DateTime.Now,
                         Volume = offeredCertificate.Amount,
                         CurrentVolume = offeredCertificate.Amount
@@ -131,7 +131,7 @@ namespace EPCSystemAPI.Controllers
                     updatedCertificates.Add(new CertificateDto
                     {
                         UserId = tradeRequest.ToUserId,
-                        ElectricityProductionId = userCertificate.ElectricityProductionId,
+                        EnergyProductionId = userCertificate.EnergyProductionId,
                         Amount = offeredCertificate.Amount
                     });
                 }

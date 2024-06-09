@@ -4537,11 +4537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
+      "projectUniqueName": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
       "projectName": "EPCSystemAPI",
-      "projectPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
+      "projectPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
       "packagesPath": "C:\\Users\\rasmu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\obj\\",
+      "outputPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPCSystemAPI\\EPCSystemAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rasmu\\AppData\\Roaming\\NuGet\\NuGet.Config",

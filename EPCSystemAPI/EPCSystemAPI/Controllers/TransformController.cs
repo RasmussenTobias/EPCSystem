@@ -15,9 +15,9 @@ namespace EPCSystemAPI.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<TransformController> _logger;
-        private readonly ElectricityProductionService _productionService;
+        private readonly EnergyProductionService _productionService;
 
-        public TransformController(ApplicationDbContext context, ILogger<TransformController> logger, ElectricityProductionService productionService)
+        public TransformController(ApplicationDbContext context, ILogger<TransformController> logger, EnergyProductionService productionService)
         {
             _context = context;
             _logger = logger;
@@ -74,14 +74,14 @@ namespace EPCSystemAPI.Controllers
                     var energyTransformed = totalInputVolume * (transformRequest.Efficiency / 100);
                     var energyLost = totalInputVolume - energyTransformed;
 
-                    var productionRequest = new ElectricityProductionDto
+                    var productionRequest = new EnergyProductionDto
                     {
                         ProductionTime = transformRequest.ProductionTime,
                         AmountWh = energyTransformed,
                         DeviceId = transformRequest.DeviceId
                     };
 
-                    var result = await _productionService.CreateElectricityProduction(productionRequest, true, "TRANSFORM");
+                    var result = await _productionService.CreateEnergyProduction(productionRequest, true, "TRANSFORM");
 
                     // Update all transform events with the new certificate ID
                     var transformEvents = await _context.TransformEvents.Where(te => te.BundleId == bundleId).ToListAsync();
@@ -100,7 +100,7 @@ namespace EPCSystemAPI.Controllers
 
                     await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
-                    return Ok(new { ElectricityProduction = result.Item1, Certificate = result.Item2 });
+                    return Ok(new { EnergyProduction = result.Item1, Certificate = result.Item2 });
                 }
                 catch (Exception ex)
                 {

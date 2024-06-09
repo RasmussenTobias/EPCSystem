@@ -1,39 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.TransformEvents.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\transformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\transformcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|c:\\users\\rasmu\\onedrive - university of copenhagen\\uni\\bachelorsproject\\epssystem\\epcsystemapi\\epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\tracingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.electricity_production.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.Certificates.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.events.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.produce_events.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\electricityproductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE93CD2C-DC04-448E-A735-7A935F95B7C3}|EPCSystemAPI\\EPCSystemAPI.csproj|solutionrelative:epcsystemapi\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPCSystemAPI\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -41,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dbo.events [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.events.sql",
-              "ToolTip": "dbo.events [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-09T07:51:12.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "dbo.produce_events [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.produce_events.sql",
-              "ToolTip": "dbo.produce_events [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-09T07:51:01.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TracingController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TracingController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TracingController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TracingController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TracingController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T07:45:30.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.TransformEvents [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.TransformEvents.sql",
-              "ToolTip": "dbo.TransformEvents [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-09T07:44:26.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.electricity_production [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.electricity_production.sql",
-              "ToolTip": "dbo.electricity_production [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-08T16:01:28.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransformController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransformController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\TransformController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\TransformController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\TransformController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAUAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T07:34:35.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dbo.Certificates [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EPSystem/True/SqlTable/dbo.Certificates.sql",
-              "ToolTip": "dbo.Certificates [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-09T07:51:20.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ElectricityProductionController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\ElectricityProductionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T15:59:33.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DevicesController.cs",
-              "DocumentMoniker": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeDocumentMoniker": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ToolTip": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "RelativeToolTip": "EPCSystemAPI\\Controllers\\DevicesController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAwwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T15:57:20.989Z"
             }
           ]
         }

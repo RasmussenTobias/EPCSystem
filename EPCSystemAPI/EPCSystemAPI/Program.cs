@@ -21,8 +21,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Register the ElectricityProductionService
-builder.Services.AddScoped<ElectricityProductionService>();
+// Register the EnergyProductionService
+builder.Services.AddScoped<EnergyProductionService>();
 
 // Register the ITransactionManagementService
 builder.Services.AddScoped<ITransactionManagementService, TransactionManagementService>();

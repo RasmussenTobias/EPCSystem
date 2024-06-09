@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MBVbr7nmQUIveQw0S5FK4rVXRVfpy1fzgQaIaYFV5C3hIet5Cd2wX/7CrnPnz+ByxWlzB5idU71YoJinGTrdZQ==",
+  "dgSpecHash": "Fhn0x4Rv2N57uT2F++UVhn6LMkenXK7+rYWjF4Sl7znYZaKzkSlFglpNcSOtg4YWyE/T+W92dxjZxUL0GcsHzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPSSystem\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
+  "projectFilePath": "C:\\Users\\rasmu\\OneDrive - University of Copenhagen\\Uni\\BachelorsProject\\EPCSystemAPI\\EPCSystemAPI\\EPCSystemAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rasmu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\rasmu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

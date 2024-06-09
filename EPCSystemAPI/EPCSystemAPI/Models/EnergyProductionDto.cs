@@ -2,7 +2,7 @@
 
 namespace EPCSystemAPI.models
 {
-    public class ElectricityProductionDto
+    public class EnergyProductionDto
     {
         public DateTime ProductionTime { get; set; }
         public decimal AmountWh { get; set; }

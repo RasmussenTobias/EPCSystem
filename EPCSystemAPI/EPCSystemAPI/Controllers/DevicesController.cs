@@ -37,14 +37,14 @@ namespace EPCSystemAPI.Controllers
             // Query database for devices by username, include related data
             var devices = await _context.Devices
                 .Include(d => d.User)
-                .Include(d => d.ElectricityProductions)
+                .Include(d => d.EnergyProductions)
                 .Where(d => d.User.Username == username)
                 .Select(d => new DeviceResponseDto
                 {
                     Id = d.Id,
                     DeviceName = d.DeviceName,
                     Location = d.Location,
-                    TotalProduction = d.ElectricityProductions.Sum(ep => ep.AmountWh)
+                    TotalProduction = d.EnergyProductions.Sum(ep => ep.AmountWh)
                 })
                 .ToListAsync();
 

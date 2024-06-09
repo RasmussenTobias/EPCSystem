@@ -10,6 +10,6 @@ namespace EPCSystemAPI.models
         public int FromUserId { get; set; }
         public int ToUserId { get; set; }
         public decimal Volume { get; set; }
-        public int ElectricityProductionId { get; set; }         
+        public int EnergyProductionId { get; set; }         
     }
 }

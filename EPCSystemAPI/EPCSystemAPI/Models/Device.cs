@@ -14,6 +14,6 @@ namespace EPCSystemAPI.models
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
         public User User { get; set; }
-        public ICollection<ElectricityProduction> ElectricityProductions { get; set; } = new List<ElectricityProduction>();
+        public ICollection<EnergyProduction> EnergyProductions { get; set; } = new List<EnergyProduction>();
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EPCSystemAPI.models
 {
-    public class ElectricityProduction
+    public class EnergyProduction
     {
         public int Id { get; set; }
         public DateTime ProductionTime { get; set; }

@@ -9,7 +9,7 @@ namespace EPCSystemAPI.models
         [Key]
         public int Id { get; set; }
         public int BundleId { get; set; }
-        public int Electricity_Production_Id { get; set; }
+        public int Energy_Production_Id { get; set; }
         public int FromUserId { get; set; }
         public int ToUserId { get; set; }
         public decimal Volume { get; set; }       

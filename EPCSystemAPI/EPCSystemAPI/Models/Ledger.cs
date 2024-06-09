@@ -15,8 +15,8 @@ namespace EPCSystemAPI.models
         [Required]
         public string EventType { get; set; }
 
-        [ForeignKey("ElectricityProduction")]
-        public int ElectricityProductionId { get; set; }
+        [ForeignKey("EnergyProduction")]
+        public int EnergyProductionId { get; set; }
 
         [Required]
         public DateTime TransactionDate { get; set; }
@@ -26,6 +26,6 @@ namespace EPCSystemAPI.models
 
         // Navigation properties
         public Certificate Certificate { get; set; }
-        public ElectricityProduction ElectricityProduction { get; set; }
+        public EnergyProduction EnergyProduction { get; set; }
     }
 }

@@ -1,18 +1,18 @@
 ﻿using EPCSystemAPI.models;
 using EPCSystemAPI;
 
-public class ElectricityProductionService
+public class EnergyProductionService
 {
     private readonly ApplicationDbContext _context;
-    private readonly ILogger<ElectricityProductionService> _logger;
+    private readonly ILogger<EnergyProductionService> _logger;
 
-    public ElectricityProductionService(ApplicationDbContext context, ILogger<ElectricityProductionService> logger)
+    public EnergyProductionService(ApplicationDbContext context, ILogger<EnergyProductionService> logger)
     {
         _context = context;
         _logger = logger;
     }
 
-    public async Task<(ElectricityProduction, Certificate)> CreateElectricityProduction(ElectricityProductionDto model, bool isTransform, string eventType)
+    public async Task<(EnergyProduction, Certificate)> CreateEnergyProduction(EnergyProductionDto model, bool isTransform, string eventType)
     {
         try
         {
@@ -22,20 +22,20 @@ public class ElectricityProductionService
                 throw new Exception("Device not found");
             }
 
-            var electricityProduction = new ElectricityProduction
+            var energyProduction = new EnergyProduction
             {
                 ProductionTime = model.ProductionTime,
                 AmountWh = model.AmountWh,
                 DeviceId = model.DeviceId
             };
 
-            _context.Electricity_Production.Add(electricityProduction);
+            _context.Energy_Production.Add(energyProduction);
             await _context.SaveChangesAsync();
 
             var certificate = new Certificate
             {
                 UserId = device.UserId,
-                ElectricityProductionId = electricityProduction.Id,
+                EnergyProductionId = energyProduction.Id,
                 CreatedAt = DateTime.Now,
                 Volume = model.AmountWh,
                 CurrentVolume = model.AmountWh
@@ -45,7 +45,7 @@ public class ElectricityProductionService
             var produceEvent = new Event
             {
                 Event_Type = eventType,
-                Reference_Id = electricityProduction.Id,
+                Reference_Id = energyProduction.Id,
                 User_Id = device.UserId,
                 Timestamp = DateTime.Now
             };
@@ -57,7 +57,7 @@ public class ElectricityProductionService
                 Event_Id = produceEvent.Id,
                 ProductionTime = model.ProductionTime,
                 DeviceId = model.DeviceId,
-                ElectricityProductionId = electricityProduction.Id
+                EnergyProductionId = energyProduction.Id
             };
             _context.ProduceEvents.Add(productionEvent);
 
@@ -66,7 +66,7 @@ public class ElectricityProductionService
             produceEvent.Reference_Id = productionEvent.Id;
             await _context.SaveChangesAsync();
 
-            return (electricityProduction, certificate);
+            return (energyProduction, certificate);
         }
         catch (Exception ex)
         {
@@ -78,6 +78,6 @@ public class ElectricityProductionService
     private void LogDetailedError(Exception ex)
     {
         var baseException = ex.GetBaseException();
-        _logger.LogError(baseException, "An error occurred while creating electricity production: {Message}", baseException.Message);
+        _logger.LogError(baseException, "An error occurred while creating energy production: {Message}", baseException.Message);
     }
 }

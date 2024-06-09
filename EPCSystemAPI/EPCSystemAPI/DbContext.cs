@@ -13,7 +13,7 @@ namespace EPCSystemAPI
         //Setting the tables
         public DbSet<User> Users { get; set; }
         public DbSet<Device> Devices { get; set; }
-        public DbSet<ElectricityProduction> Electricity_Production { get; set; }
+        public DbSet<EnergyProduction> Energy_Production { get; set; }
         public DbSet<Certificate> Certificates { get; set; }         
         public DbSet<Event> Events { get; set; }
         public DbSet<TransferEvent> TransferEvents { get; set; }
@@ -43,14 +43,14 @@ namespace EPCSystemAPI
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Device>()
-                .HasMany(d => d.ElectricityProductions)
+                .HasMany(d => d.EnergyProductions)
                 .WithOne(e => e.Device)
                 .HasForeignKey(e => e.DeviceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<ElectricityProduction>()
+            modelBuilder.Entity<EnergyProduction>()
                 .HasOne(e => e.Device)
-                .WithMany(d => d.ElectricityProductions)
+                .WithMany(d => d.EnergyProductions)
                 .HasForeignKey(e => e.DeviceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -61,9 +61,9 @@ namespace EPCSystemAPI
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Certificate>()
-                .HasOne<ElectricityProduction>(c => c.ElectricityProduction)
+                .HasOne<EnergyProduction>(c => c.EnergyProduction)
                 .WithMany()  
-                .HasForeignKey(c => c.ElectricityProductionId)
+                .HasForeignKey(c => c.EnergyProductionId)
                 .OnDelete(DeleteBehavior.Restrict);  
 
             modelBuilder.Entity<Certificate>()
