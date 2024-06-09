@@ -1,4 +1,4 @@
-# Enhancing Energy Certification Integrity with REALISTIC Modeling and Total Resource Accounting
+# Enhancing Energy Certificate Integrity with REALISTIC Modeling and Total Resource Accounting
 
 ## Introduction
 
