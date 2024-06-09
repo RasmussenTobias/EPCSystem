@@ -16,7 +16,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository 
 
-2. Execute the setup script to configure the database using the dbconfig.sql file in the repository (make sure that the defaultconnection string matches the location of you local database instance)
+2. Execute the setup script to configure the database using the dbconfig.sql file in the repository (make sure that the defaultconnection string matches the location of you local database instance)\
 2.1 Add system user with id 0, using the insertuserid0.sql file
    
 3. Start the web server: using `dotnet run`
